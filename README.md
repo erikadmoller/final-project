@@ -10,40 +10,48 @@ If casting your vote was an online experience, what would that look like? In thi
 
 
 <h3>Data Models</h3>
+<h4>User Attributes</h4>
 <div>
 user: { <br>
-	userId: number<br>
-	address: string<br>
-	phone: number<br>
-	name: string<br>
-	ssn: number<br>
-	email: string<br>
-	governor: string<br>
-	representative: string<br>
-	proposition1: string<br>
-	tax: string<br>
-	mayer: string<br>
-	councilman: string<br>
+	userId: number, unique: true<br>
+	street: string, required: true<br>
+	city: string, required: true<br>
+	state: string (dropdown menu)<br>
+	zipcode: number, required: true<br>
+	phone: number, required: true<br>
+	name: string, required: true, unique: true<br>
+	ssn: number, required: true, unqiue: true<br>
+	email: string, required: true, unqiue: true<br>
 }
 </div>
+
+<h4>User State Vote Attributes</h4>
 <div>
 state: { <br>
-	governor: string<br>
-	representative: string<br>
+	governor: string, required: true<br>
+	representative: string, required: true<br>
 }
 </div>
+
+<h4>User County Vote Attributes</h4>
 <div>
 county: { <br>
-	proposition1: string<br>
-	tax: string<br>
+	proposition1: string, required: true<br>
+	tax: string, required: true<br>
 }
 </div>
+
+<h4>User City Vote Attributes</h4>
 <div>
 city: { <br>
-	mayor: string<br>
-	councilman: string<br>
+	mayor: string, required: true<br>
+	councilman: string, required: true<br>
 }
 </div>
+
+<h3>Page Sketches</h3>
+
+<a href="https://erikadmoller.mybalsamiq.com/projects/finalproject">Page Sketch</a>
 
 <h3>Page Sketches</h3>
 
@@ -52,4 +60,10 @@ city: { <br>
 <h3>Trello Board</h3>
 
 <a href="https://trello.com/b/kxJ9T8k1/final-project">https://trello.com/b/kxJ9T8k1/final-project</a>
+
+<h2>Libraries, Frameworks, APIs</h2>
+<ul>
+	<li>AngularJS</li>
+	<li>Sails</li>
+</ul>
 
