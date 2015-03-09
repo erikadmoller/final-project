@@ -21,37 +21,37 @@ If casting your vote was an online experience, what would that look like? In thi
 
 <h3>Data Models</h3>
 <div>
-user: {
-	userId:
-	address:
-	phone:
-	name:
-	ssn:
-	email
-	governor:
-	representative:
-	proposition1:
-	tax:
-	mayer:
-	councilman:
+user: { <br>
+	userId: number<br>
+	address: string<br>
+	phone: number<br>
+	name: string<br>
+	ssn: number<br>
+	email: string<br>
+	governor: string<br>
+	representative: string<br>
+	proposition1: string<br>
+	tax: string<br>
+	mayer: string<br>
+	councilman: string<br>
 }
 </div>
 <div>
-state: {
-	governor:
-	representative:
+state: { <br>
+	governor: string<br>
+	representative: string<br>
 }
 </div>
 <div>
-county: {
-	proposition1:
-	tax:
+county: { <br>
+	proposition1: string<br>
+	tax: string<br>
 }
 </div>
 <div>
-city: {
-	mayor:
-	councilman:
+city: { <br>
+	mayor: string<br>
+	councilman: string<br>
 }
 </div>
 
