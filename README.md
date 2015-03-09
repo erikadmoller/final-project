@@ -20,7 +20,7 @@ If casting your vote was an online experience, what would that look like? In thi
 - Page - prevent from voting again
 
 <h3>Data Models</h3>
-<p>
+<div>
 user: {
 	userId:
 	address:
@@ -35,27 +35,29 @@ user: {
 	mayer:
 	councilman:
 }
-
+</div>
+<div>
 state: {
 	governor:
 	representative:
 }
-
+</div>
+<div>
 county: {
 	proposition1:
 	tax:
 }
-
+</div>
+<div>
 city: {
 	mayor:
 	councilman:
 }
-
-</p>
+</div>
 
 <h3>Page Sketches</h3>
 
-<a href="https://github.com/erikadmoller/pages_sketch.JPG">https://github.com/erikadmoller/pages_sketch.JPG</a>
+<a href="https://github.com/erikadmoller/final-project/blob/master/pages_sketch.JPG">Page Sketch</a>
 
 <h3>Trello Board</h3>
 
