@@ -25,37 +25,29 @@ user: { <br>
 }
 </div>
 
-<h4>User State Vote Attributes</h4>
+<h4>Votes</h4>
 <div>
-state: { <br>
-	governor: string, required: true<br>
-	representative: string, required: true<br>
+votes: { <br>
+	id: number<br>
+	type: (governor, representative, proposition1, tax, mayor, councilman)<br>
+	choice: string<br>
+	year: string<br>
+	userId: string<br>
 }
 </div>
 
-<h4>User County Vote Attributes</h4>
+<h4>Voting Options</h4>
 <div>
-county: { <br>
-	proposition1: string, required: true<br>
-	tax: string, required: true<br>
-}
-</div>
-
-<h4>User City Vote Attributes</h4>
-<div>
-city: { <br>
-	mayor: string, required: true<br>
-	councilman: string, required: true<br>
+options: { <br>
+	id: number<br>
+	type: (governor, representative, proposition1, tax, mayor, councilman)<br>
+	year: string<br>
 }
 </div>
 
 <h3>Page Sketches</h3>
 
 <a href="https://erikadmoller.mybalsamiq.com/projects/finalproject">Page Sketch</a>
-
-<h3>Page Sketches</h3>
-
-<a href="https://github.com/erikadmoller/final-project/blob/master/pages_sketch.JPG">Page Sketch</a>
 
 <h3>Trello Board</h3>
 
