@@ -8,11 +8,10 @@
 module.exports = {
 
   attributes: {
-  	id: number,
-  	state: { type: 'governor', 'representative' },
-  	county: { type: 'proposition1', 'tax' },
-  	city: { type: 'mayor', 'councilman' },
-  	year: number
+  	id: { type: 'integer', unqiue: true },
+  	race: { type: 'string', required: true },
+  	candidate: { type: 'string', required: true },
+  	year: { type: 'integer', required: true }
 
   }
 };

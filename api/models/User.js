@@ -3,17 +3,20 @@ var User = {
   schema: true,
 
   attributes: {
-    userId: { type: number, unique: true },
+    username  : { type: 'string', unique: false },
+    email     : { type: 'email',  unique: false },
+    passports : { collection: 'Passport', via: 'user' },
     street: { type: 'string', required: true},
-    apt: { type: number,  required: true },
-    city: { type: 'string', required: true }
-    state: { type: 'string', required: true }
-    zipcode: { type: number, required: true }
-    phone: { type: number, required: true }
-    name: { type: 'string', required: true }
-    ssn: { type: number, required: true, unique: true }
-    email: { type: 'email', required: true, unique: true }
+    apt: { type: 'string',  required: false },
+    city: { type: 'string', required: true },
+    state: { type: 'string', required: true },
+    zipcode: { type: 'string', required: true },
+    phone: { type: 'string', required: true },
+    name: { type: 'string', required: true },
+    ssn: { type: 'string', required: true, unique: false }
   }
 };
 
 module.exports = User;
+
+// Unique status was on username, email and ssn
