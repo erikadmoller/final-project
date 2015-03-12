@@ -1,10 +1,10 @@
 module.exports = {
 
   attributes: {
-  	id: { type: 'integer', unique: true },
-  	type: { type: 'string', required: true},
-  	choice: { type: 'string', required: true }, 
-  	year: { type: 'integer', required: true },
-  	userId: { type: 'integer', unique: true }
+  	id: { type: 'integer', unique: false },
+  	type: { type: 'string', required: false},
+  	choice: { type: 'string', required: false }, 
+  	year: { type: 'integer', required: false },
+  	userId: { type: 'integer', unique: false }
   }
 };

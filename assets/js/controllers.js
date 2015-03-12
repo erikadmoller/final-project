@@ -23,8 +23,8 @@ angular.module('basic.controllers', ['basic.services'])
 		.success(function(response) {
 			console.log(response);
 			$state.go('elections');
-		})
-	}
+		});
+	};
 
 })
 .controller('electionsCtrl', function($scope) {
@@ -33,9 +33,28 @@ angular.module('basic.controllers', ['basic.services'])
 })
 .controller('stateCtrl', function($scope, $http, $state) {
 
-	$scope.stateSubmit = function() {
-		$state.go('elections');
-	}
+	$scope.governors = [];
+	$scope.representatives = [];
+
+	$http.get('/options?race=governor')
+		.success(function(states) {
+			console.log(states);
+			$scope.governors = states;
+			});
+
+	$http.get('/options?race=representative')
+		.success(function(states) {
+			console.log(states);
+			$scope.representatives = states;
+			});
+
+	$scope.stateSubmit = function(voterChoices) {
+		$http.post('/votes', voterChoices)
+			.success(function(response) {
+				console.log(response);
+		// $state.go('elections');
+		});
+	};
 
 	// $scope.selection = function(position, options) {
 	// 	angular.forEach(options, function(governor, index) {
@@ -44,32 +63,24 @@ angular.module('basic.controllers', ['basic.services'])
 	// 	})
 	// }
 
-	$scope.states = [];
-
-	$http.get('/options')
-		.success(function(states) {
-			console.log(states);
-			$scope.states = states;
-			});
-
 })
 .controller('countyCtrl', function($scope) {
 
 	$scope.countySubmit = function() {
 		$state.go('elections');
-	}
+	};
 
 })
 .controller('cityCtrl', function($scope) {
 
 	$scope.citySubmit = function() {
 		$state.go('elections');
-	}
+	};
 
 })
 .controller('confirmationCtrl', function($scope) {
 
 	$scope.confirmSubmit = function(textConfirm) {
 		$state.go('register');
-	}
-})
+	};;
+});

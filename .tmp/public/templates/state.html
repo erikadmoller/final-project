@@ -7,34 +7,14 @@
 	</div>
 	<form class="form" ng-submit="stateSubmit()">
 		<div>
-		<!-- Ideally, use ng-repeat to show the elections -->
-			<div ng-repeat="state in states">
+			<div ng-repeat="governor in governors">
 				<span class="item item-checkbox">
 					<label class="checkbox">
 						<input type="checkbox" ng-model="governor.checked" ng-click="selection(index, options)">
 					</label>
-					<span>{{ state.candidate }}</span>
+					<span>{{ governor.candidate }}</span>
 				</span>
 			</div>
-
-			<!-- <span class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
-				</label>
-				Bob Roberts
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
-				</label>
-				Sheila Lui
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
-				</label>
-				Rogger Rice
-			</span> -->
 		</div>
 
 		<div>
@@ -42,34 +22,16 @@
 			<h3>STATE REPRESENTATIVE</h3>
 		</div>
 		<div>
-			<div ng-repeat="state in states">
+			<div ng-repeat="representative in representatives">
 				<span class="item item-checkbox">
 					<label class="checkbox">
 						<input type="checkbox" ng-model="representative.checked" ng-click="selection($index, options)">
 					</label>
-					<span>{{ state.candidate }}</span>
+					<span>{{ representative.candidate }}</span>
 				</span>
 			</div>
-		<!-- 	<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
-				</label>
-				Adam Blakely
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
-				</label>
-				Ryan Pike
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
-				</label>
-				Sally Camp
-			</span> -->
 		</div>
-			<br><br>
+		<br><br>
 		<div>
 		<button type="submit" value="submit">Submit</button>
 		</div>
