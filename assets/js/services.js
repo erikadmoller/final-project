@@ -1,25 +1,34 @@
 angular.module('basic.services', [])
 
-.factory('registerCtrl', function() {
+.factory('Validate', function() {
 	return {
 			credentials: function(credentials) {
 				/* error Model */
 				var error = {
-					identifier: '',
-					password: ''
+					username: '',
+					password: '',
+					name: '',
+					street: '',
+					apt: '',
+					city: '',
+					state: '',
+					zipcode: '',
+					phone: '',
+					email: '',
+					ssn: ''
 				};
 				/* htmlCredentials.identifier is '' evalutates to false --> 
 				!false evals to true. Therfore, it runs the if(true) statement */
 
 				/* True its empty */
-				if(!htmlCredentials.identifier) {
-					error.identifier = 'Enter your email address';
+				if(!credentials.email) {
+					error.email = 'Enter your email address';
 				}
-				else if(!validator.isEmail(htmlCredentials.identifier)) {
-					error.identifier = 'The email address is not valid';
+				else if(!validator.isEmail(credentials.email)) {
+					error.email = 'The email address is not valid';
 				}
 
-				if(!htmlCredentials.password) {
+				if(!credentials.password) {
 					error.password = 'Enter a password';
 				}
 

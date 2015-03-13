@@ -8,7 +8,6 @@
 module.exports = {
 
   attributes: {
-  	id: { type: 'integer', unqiue: true },
   	race: { type: 'string', required: true },
   	candidate: { type: 'string', required: true },
   	year: { type: 'integer', required: true }

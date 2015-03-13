@@ -3,6 +3,11 @@ angular.module('app', ['basic.controllers', 'ui.router'])
 
 	$stateProvider
 
+	.state('login', {
+		url: '/login',
+		templateUrl: 'templates/login.html',
+		controller: 'loginCtrl'
+	})
 	.state('register', {
 		url: '/register',
 		templateUrl: 'templates/registration.html',
@@ -34,5 +39,5 @@ angular.module('app', ['basic.controllers', 'ui.router'])
 		controller: 'confirmationCtrl'
 	})
 
-	// $urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/register');
 })

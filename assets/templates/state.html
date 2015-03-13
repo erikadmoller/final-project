@@ -5,12 +5,12 @@
 		<h3>For the race of</h3>
 		<h3>GOVERNOR</h3>
 	</div>
-	<form class="form" ng-submit="stateSubmit()">
+	<form class="form" ng-submit="stateSubmit(pick.governor, pick.representative)">
 		<div>
 			<div ng-repeat="governor in governors">
 				<span class="item item-checkbox">
 					<label class="checkbox">
-						<input type="checkbox" ng-model="governor.checked" ng-click="selection(index, options)">
+						<input ng-value="governor.id" type="radio" ng-model="pick.governor">
 					</label>
 					<span>{{ governor.candidate }}</span>
 				</span>
@@ -25,7 +25,7 @@
 			<div ng-repeat="representative in representatives">
 				<span class="item item-checkbox">
 					<label class="checkbox">
-						<input type="checkbox" ng-model="representative.checked" ng-click="selection($index, options)">
+						<input ng-value="representative.id" type="radio" ng-model="pick.representative">
 					</label>
 					<span>{{ representative.candidate }}</span>
 				</span>
