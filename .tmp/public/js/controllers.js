@@ -1,6 +1,22 @@
 angular.module('basic.controllers', ['basic.services', 'ui.router'])
 .controller('loginCtrl', function($scope, $http, $state) {
 	
+	$scope.user = {
+		password: '',
+		email: ''
+	}
+
+	$scope.loginSubmit = function(user) {
+		user.username = user.email;
+		console.log(user);
+
+		$http.post('/auth/local', user)
+		.success(function(response) {
+			console.log(response);
+			$state.go('elections');
+		})
+
+	};
 })
 .controller('registerCtrl', function($scope, $http, $state, Validate) {
 
@@ -70,8 +86,15 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 	};
 
 })
-.controller('electionsCtrl', function($scope) {
+.controller('electionsCtrl', function($scope, $http, $state) {
 	// do a http request when page loads /options ? year = 2015 filter '?'
+	$scope.logout = function() {
+		$http.get('/logout')
+		.success(function(logout) {
+			console.log(logout);
+			$state.go('login');
+		})
+	}
 
 })
 .controller('stateCtrl', function($scope, $http, $state) {

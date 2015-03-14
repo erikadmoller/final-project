@@ -34,7 +34,7 @@ this["JST"]["assets/templates/elections-list.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<h2>Pick your elections</h2>\n\n<div>\n\t<button type="button">\n\t<a ui-sref="state">State</a>\n\t</button>\n\t</div>\n\t<div>\n\t<button type="button">\n\t<a ui-sref="county">County</a>\n\t</button>\n\t</div>\n\t<div>\n\t<button type="button">\n\t<a ui-sref="city">City</a>\n\t</button>\n</div>';
+__p += '<h2>Pick your elections</h2>\n\n<div>\n\t<button ng-click="logout()" type="button">Logout</button>\n</div>\n<div>\n\t<button type="button">\n\t<a ui-sref="state">State</a>\n\t</button>\n\t</div>\n\t<div>\n\t<button type="button">\n\t<a ui-sref="county">County</a>\n\t</button>\n\t</div>\n\t<div>\n\t<button type="button">\n\t<a ui-sref="city">City</a>\n\t</button>\n</div>';
 
 }
 return __p
@@ -44,7 +44,7 @@ this["JST"]["assets/templates/login.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div>\n\t<div ng-controller="loginCtrl">\n\t\t<h3>Login</h3>\n\t\t<form ng-submit="loginSubmit(user)">\n\t\t\t<div>\n\t\t\t\t<span>Password:</span>\n\t\t\t\t<input type="text" ng-model="user.password" placeholder="Password">\n\t\t\t</div>\n\t\t\t<span>Enter your email:</span>\n\t\t\t\t<input type="text" ng-model="user.email" placeholder="Email">\n\t\t</form>\n\t</div>\n</div>';
+__p += '<div>\n\t<div ng-controller="loginCtrl">\n\t\t<h3>Login</h3>\n\t\t<form ng-submit="loginSubmit(user)">\n\t\t\t<div>\n\t\t\t\t<span>Password:</span>\n\t\t\t\t<input type="text" ng-model="user.password" placeholder="Password">\n\t\t\t</div>\n\t\t\t<span>Enter your email:</span>\n\t\t\t\t<input type="text" ng-model="user.email" placeholder="Email">\n\t\t\t<br><br>\n\t\t\t<button type="submit">Submit</button>\n\t\t</form>\n\t</div>\n</div>';
 
 }
 return __p
@@ -64,7 +64,7 @@ this["JST"]["assets/templates/state.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<h2>Your state elections</h2>\n\n<div>\n\t<div>\n\t\t<h3>For the race of</h3>\n\t\t<h3>GOVERNOR</h3>\n\t</div>\n\t<form class="form" ng-submit="stateSubmit(pick.governor, pick.representative)">\n\t\t<div>\n\t\t\t<div ng-repeat="governor in governors">\n\t\t\t\t<span class="item item-checkbox">\n\t\t\t\t\t<label class="checkbox">\n\t\t\t\t\t\t<input ng-value="governor.id" type="radio" ng-model="pick.governor">\n\t\t\t\t\t</label>\n\t\t\t\t\t<span>{{ governor.candidate }}</span>\n\t\t\t\t</span>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<h3>For the race of</h3>\n\t\t\t<h3>STATE REPRESENTATIVE</h3>\n\t\t</div>\n\t\t<div>\n\t\t\t<div ng-repeat="representative in representatives">\n\t\t\t\t<span class="item item-checkbox">\n\t\t\t\t\t<label class="checkbox">\n\t\t\t\t\t\t<input ng-value="representative.id" type="radio" ng-model="pick.representative">\n\t\t\t\t\t</label>\n\t\t\t\t\t<span>{{ representative.candidate }}</span>\n\t\t\t\t</span>\n\t\t\t</div>\n\t\t</div>\n\t\t<br><br>\n\t\t<div>\n\t\t<button type="submit" value="submit">Submit</button>\n\t\t</div>\n\t</form>\n</div>\n\n';
+__p += '<h2>Your state elections</h2>\n\n<div>\n\t<div>\n\t\t<h3>For the race of</h3>\n\t\t<h3>GOVERNOR</h3>\n\t</div>\n\t<form class="form" ng-submit="stateSubmit(pick.governor, pick.representative)">\n\t\t<div>\n\t\t\t<div ng-repeat="governor in governors">\n\t\t\t\t<span class="item item-checkbox">\n\t\t\t\t\t<label class="checkbox">\n\t\t\t\t\t\t<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="select">\n\t\t\t\t\t</label>\n\t\t\t\t\t<span>{{ governor.candidate }}</span>\n\t\t\t\t</span>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<h3>For the race of</h3>\n\t\t\t<h3>STATE REPRESENTATIVE</h3>\n\t\t</div>\n\t\t<div>\n\t\t\t<div ng-repeat="representative in representatives">\n\t\t\t\t<span class="item item-checkbox">\n\t\t\t\t\t<label class="checkbox">\n\t\t\t\t\t\t<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="select">\n\t\t\t\t\t</label>\n\t\t\t\t\t<span>{{ representative.candidate }}</span>\n\t\t\t\t</span>\n\t\t\t</div>\n\t\t</div>\n\t\t<br><br>\n\t\t<div>\n\t\t<button type="submit" value="submit">Submit</button>\n\t\t</div>\n\t</form>\n</div>\n\n';
 
 }
 return __p
