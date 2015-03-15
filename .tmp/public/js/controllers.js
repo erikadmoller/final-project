@@ -71,17 +71,17 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 			 };
 		 console.log(user);
 
-		$http.post('/auth/local/register', user)
-		.success(function(response) {
-			console.log(response);
-			$state.go('elections');
-		})
+			$http.post('/auth/local/register', user)
+			.success(function(response) {
+				console.log(response);
+				$state.go('elections');
+			})
 
-		.error(function(err) {
-			 	console.log('Error!');
-			 	console.log(err);
-		});
-	};
+			.error(function(err) {
+				console.log('Error!');
+				console.log(err);
+			});
+		};
 
 	};
 
@@ -93,7 +93,7 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		.success(function(logout) {
 			console.log(logout);
 			$state.go('login');
-		})
+		});
 	}
 
 })
@@ -103,16 +103,16 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 	$scope.representatives = [];
 
 	$http.get('/options?race=governor')
-		.success(function(states) {
-			// console.log(states);
-			$scope.governors = states;
-			});
+	.success(function(states) {
+		// console.log(states);
+		$scope.governors = states;
+	});
 
 	$http.get('/options?race=representative')
-		.success(function(states) {
-			// console.log(states);
-			$scope.representatives = states;
-			});
+	.success(function(states) {
+		// console.log(states);
+		$scope.representatives = states;
+	});
 
 
 	// $scope.pick = { 
@@ -145,27 +145,125 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 				console.log(response);
 			});
 
-		// $state.go('elections');	
+		$state.go('elections');	
 	};
 
 })
-.controller('countyCtrl', function($scope) {
+.controller('countyCtrl', function($scope, $http, $state) {
 
-	$scope.countySubmit = function() {
-		$state.go('elections');
+	$scope.propositions = [];
+	$scope.laws = [];
+
+	$http.get('/options?race=proposition')
+	.success(function(county) {
+		// console.log(county);
+		$scope.propositions = county;
+	});
+
+	$http.get('/options?race=law')
+	.success(function(county) {
+		// console.log(county);
+		$scope.laws = county;
+	});
+
+
+	// $scope.pick = { 
+	// 	proposition: '',
+	// 	law: ''
+	// };
+
+	$scope.countySubmit = function(propositionChoice, lawChoice) {
+		// console.log(propositionChoice, lawChoice);
+		// console.log($scope.pick);
+		// console.log($scope.user);
+
+		var userPropChoice = {
+			userId: 1,
+			choice: propositionChoice
+		};
+
+		var userLawChoice = {
+			userId: 1,
+			choice: lawChoice
+		};
+
+		$http.post('/votes', userPropChoice)
+			.success(function(response) {
+				console.log(response);
+			});
+
+		$http.post('/votes', userLawChoice)
+			.success(function(response) {
+				console.log(response);
+			});
+
+		$state.go('elections');	
 	};
 
 })
-.controller('cityCtrl', function($scope) {
+.controller('cityCtrl', function($scope, $http, $state) {
 
-	$scope.citySubmit = function() {
-		$state.go('elections');
+	$scope.mayors = [];
+	$scope.councilmen = [];
+
+	$http.get('/options?race=mayor')
+	.success(function(city) {
+		// console.log(city);
+		$scope.mayors = city;
+	});
+
+	$http.get('/options?race=councilman')
+	.success(function(city) {
+		// console.log(city);
+		$scope.councilmen = city;
+	});
+
+
+	// $scope.pick = { 
+	// 	mayor: '',
+	// 	councilman: ''
+	// };
+
+	$scope.citySubmit = function(mayorChoice, councilmanChoice) {
+		// console.log(mayorChoice, councilmanChoice);
+		// console.log($scope.pick);
+		// console.log($scope.user);
+
+		var userMayChoice = {
+			userId: 1,
+			choice: mayorChoice
+		};
+
+		var userCounChoice = {
+			userId: 1,
+			choice: councilmanChoice
+		};
+
+		$http.post('/votes', userMayChoice)
+			.success(function(response) {
+				console.log(response);
+			});
+
+		$http.post('/votes', userCounChoice)
+			.success(function(response) {
+				console.log(response);
+			});
+
+		$state.go('elections');	
 	};
 
 })
-.controller('confirmationCtrl', function($scope) {
+.controller('confirmationCtrl', function($scope, $state) {
+
+	$scope.textUpdate = false;
 
 	$scope.confirmSubmit = function(textConfirm) {
-		$state.go('register');
-	};;
+
+		if(textConfirm === 'yes') {
+			$scope.textUpdate = true;
+		}
+		else {
+			$state.go('register');
+		}
+	};
 });

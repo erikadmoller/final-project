@@ -10,7 +10,7 @@
 			<div ng-repeat="governor in governors">
 				<span class="item item-checkbox">
 					<label class="checkbox">
-						<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="select">
+						<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">
 					</label>
 					<span>{{ governor.candidate }}</span>
 				</span>
@@ -25,7 +25,7 @@
 			<div ng-repeat="representative in representatives">
 				<span class="item item-checkbox">
 					<label class="checkbox">
-						<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="select">
+						<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">
 					</label>
 					<span>{{ representative.candidate }}</span>
 				</span>

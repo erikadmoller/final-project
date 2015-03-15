@@ -12,7 +12,8 @@ var User = {
     phone: { type: 'integer', required: true },
     name: { type: 'string', required: true },
     ssn: { type: 'integer', required: true, unique: true },
-    email: { type: 'email', required: true, unique: true }
+    email: { type: 'email', required: true, unique: true },
+    textConfirm: { type: 'string', required: false }
   }
 };
 

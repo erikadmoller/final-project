@@ -5,26 +5,16 @@
 		<h3>For the race of</h3>
 		<h3>MAYOR</h3>
 	</div>
-	<form class="form" ng-submit="citySubmit(checkbox1, checkbox2)">
+	<form class="form" ng-submit="citySubmit(pick.mayor, pick.councilman)">
 		<div>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox">
-				</label>
-				Jeana Moore
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox">
-				</label>
-				Sheila Lui
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox">
-				</label>
-				Kelly Perkins
-			</span>
+			<div ng-repeat="mayor in mayors">
+				<span class="item item-checkbox">
+					<label class="checkbox">
+						<input ng-value="mayor.id" type="radio" ng-model="pick.mayor" name="maySelect">
+					</label>
+					<span>{{ mayor.candidate }}</span>
+				</span>
+			</div>
 		</div>
 
 		<div>
@@ -32,28 +22,18 @@
 			<h3>COUNCILMAN</h3>
 		</div>
 		<div>
-			<span class="item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox">
-				</label>
-				Jack Dearborn
-			</span>
-			<span class="item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox">
-				</label>
-				Ryan Pike
-			</span>
-			<span class="item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox">
-				</label>
-				Sally Camp
-			</span>
+			<div ng-repeat="councilman in councilmen">
+				<span class="item item-checkbox">
+					<label class="checkbox">
+						<input ng-value="councilman.id" type="radio" ng-model="pick.councilman" name="counSelect">
+					</label>
+					<span>{{ councilman.candidate }}</span>
+				</span>
+			</div>
 		</div>
-			<br><br>
+		<br><br>
 		<div>
-		<input type="button" value="submit">
+			<button type="submit" value="submit">Submit</button>
 		</div>
 	</form>
 </div>

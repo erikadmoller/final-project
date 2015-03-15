@@ -2,15 +2,15 @@
 <br><br>
 <div>
 	<div>
-		<h3>Would you like to receive text messages updates?</h3>
+		<h3>Would you like to receive text message updates?</h3>
 	</div>
 	<form class="form" ng-submit="confirmSubmit(textConfirm)">
 		<div>
-			<select>
-				<option ng-model="textConfirm" value="yes">Yes</option>
-				<option ng-model="textConfirm" value="no">No</option>
+			<select name="confirmation" size="1" ng-model="textConfirm">
+				<option value="yes">Yes</option>
+				<option value="no">No</option>
 			</select>
-			<input ng-model="county.tax" type="submit" value="submit">
+			<button type="submit" value="submit">Submit</button>
 		</div>
 	</form>
 	<div ng-show="textUpdate">We will send you text message updates</div>
