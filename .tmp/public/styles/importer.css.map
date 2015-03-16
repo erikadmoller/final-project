@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": ";;;;;;;;;;;;;;;AAAA,OAAQ;EACP,gBAAgB,EAAE,IAAI;;AAGvB,QAAS;EACR,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,MAAM;;AAGf,WAAY;EACX,SAAS,EAAE,GAAG;EACd,MAAM,EAAE,CAAC;;AAGV,WAAY;EACX,MAAM,EAAE,aAAa",
+"sources": ["../../../assets/styles/registration.scss"],
 "names": [],
 "file": "importer.css"
 }

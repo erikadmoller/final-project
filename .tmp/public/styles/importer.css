@@ -13,5 +13,18 @@
  * always omit, customize, or replace this behavior with SASS, SCSS,
  * or any other Grunt tasks you like.)
  */
+.header {
+  background-color: #aaa; }
+
+.wrapper {
+  width: 20em;
+  margin: 0 auto; }
+
+.wrapper h1 {
+  font-size: 7em;
+  margin: 0; }
+
+.wrapper h3 {
+  margin: 0 auto 0 auto; }
 
 /*# sourceMappingURL=importer.css.map */

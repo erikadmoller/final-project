@@ -95,6 +95,9 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 			$state.go('login');
 		});
 	}
+	$scope.finish = function() {
+		$state.go('confirmation');	
+	}
 
 })
 .controller('stateCtrl', function($scope, $http, $state) {
