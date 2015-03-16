@@ -124,7 +124,7 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 	// };
 
 	$scope.stateSubmit = function(governorChoice, representativeChoice) {
-		// console.log(governorChoice, representativeChoice);
+		console.log(governorChoice, representativeChoice);
 		// console.log($scope.pick);
 		// console.log($scope.user);
 
