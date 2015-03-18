@@ -2,8 +2,8 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 .controller('loginCtrl', function($scope, $http, $state) {
 	
 	$scope.user = {
-		password: '',
-		email: ''
+		email: '',
+		identifier: ''
 	}
 
 	$scope.loginSubmit = function(user) {
@@ -118,10 +118,10 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 	});
 
 
-	// $scope.pick = { 
-	// 	governor: '',
-	// 	representative: ''
-	// };
+	$scope.pick = { 
+		governor: '',
+		representative: ''
+	};
 
 	$scope.stateSubmit = function(governorChoice, representativeChoice) {
 		console.log(governorChoice, representativeChoice);
@@ -170,13 +170,13 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 	});
 
 
-	// $scope.pick = { 
-	// 	proposition: '',
-	// 	law: ''
-	// };
+	$scope.pick = { 
+		proposition: '',
+		law: ''
+	};
 
 	$scope.countySubmit = function(propositionChoice, lawChoice) {
-		// console.log(propositionChoice, lawChoice);
+		console.log(propositionChoice, lawChoice);
 		// console.log($scope.pick);
 		// console.log($scope.user);
 
@@ -222,13 +222,13 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 	});
 
 
-	// $scope.pick = { 
-	// 	mayor: '',
-	// 	councilman: ''
-	// };
+	$scope.pick = { 
+		mayor: '',
+		councilman: ''
+	};
 
 	$scope.citySubmit = function(mayorChoice, councilmanChoice) {
-		// console.log(mayorChoice, councilmanChoice);
+		console.log(mayorChoice, councilmanChoice);
 		// console.log($scope.pick);
 		// console.log($scope.user);
 
@@ -256,7 +256,7 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 	};
 
 })
-.controller('confirmationCtrl', function($scope, $state) {
+.controller('confirmationCtrl', function($scope, $http, $state) {
 
 	$scope.textUpdate = false;
 
@@ -264,8 +264,16 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 
 		if(textConfirm === 'yes') {
 			$scope.textUpdate = true;
+			$http.post('/message/send')
+				.success(function(response) {
+					console.log(response);
+				})
 		}
 		else {
+			$http.get('/logout')
+				.success(function(response) {
+					console.log(response);
+				})
 			$state.go('register');
 		}
 	};

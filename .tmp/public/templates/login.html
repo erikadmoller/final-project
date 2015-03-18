@@ -3,11 +3,12 @@
 		<h3>Login</h3>
 		<form ng-submit="loginSubmit(user)">
 			<div>
+				<span>Enter your username:</span>
+				<input type="text" ng-model="user.identifier" placeholder="Email">
+			</div>
 				<span>Password:</span>
 				<input type="text" ng-model="user.password" placeholder="Password">
-			</div>
-			<span>Enter your email:</span>
-				<input type="text" ng-model="user.email" placeholder="Email">
+
 			<br><br>
 			<button type="submit">Submit</button>
 		</form>

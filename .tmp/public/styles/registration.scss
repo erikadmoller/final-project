@@ -97,6 +97,7 @@ body {
     background: $gray-light;
     cursor: pointer;
   }
+
   .lf--input {
     flex: 1;
     padding: 1em;
@@ -109,6 +110,11 @@ body {
       transition: transform .15s ease;
       transform: scale(1.1);
     }
+  }
+
+  .dropdown {
+    height: 3em;
+    background-color: white;
   }
 
   .lf--submit {
@@ -143,3 +149,4 @@ body {
 }
 
 ::placeholder { color: $gray; }
+

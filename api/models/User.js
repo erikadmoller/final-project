@@ -3,8 +3,8 @@ var User = {
   schema: true,
 
   attributes: {
-    username  : { type: 'string', unique: false },
-    email     : { type: 'email',  unique: false },
+    username  : { type: 'string', unique: true },
+    email     : { type: 'email',  unique: true },
     passports : { collection: 'Passport', via: 'user' },
     street: { type: 'string', required: true},
     apt: { type: 'string',  required: false },
@@ -13,7 +13,7 @@ var User = {
     zipcode: { type: 'string', required: true },
     phone: { type: 'string', required: true },
     name: { type: 'string', required: true },
-    ssn: { type: 'string', required: true, unique: false }
+    ssn: { type: 'string', required: true, unique: true }
   }
 };
 

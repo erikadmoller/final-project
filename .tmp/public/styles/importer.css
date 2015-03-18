@@ -94,6 +94,10 @@ body {
     transition: transform .15s ease;
     transform: scale(1.1); }
 
+.dropdown {
+  height: 3em;
+  background-color: white; }
+
 .lf--submit {
   display: block;
   padding: 1em;
