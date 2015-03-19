@@ -1,23 +1,29 @@
-<h2>Pick your elections</h2>
+<header class="wrapper">
+	<h2>Choose your elections</h2>
+</header>
 
-<div>
+<!-- <div>
 	<button ng-click="logout()" type="button">Logout</button>
-</div>
-<div>
-	<button type="button">
-	<a ui-sref="state">State</a>
-	</button>
-	</div>
-	<div>
-	<button type="button">
-	<a ui-sref="county">County</a>
-	</button>
-	</div>
-	<div>
-	<button type="button">
-	<a ui-sref="city">City</a>
-	</button>
-</div>
-<div>
-	<button ng-click="finish()" type="button">Finish</button>
-</div>
+</div> -->
+
+
+<nav class='login-form'>
+	  <div class="flex-row">
+	    <button class='lf--input' ui-sref="state">
+	    	<p>State</p>
+	    </button>
+	  </div>
+	  <div class="flex-row">
+	    <button class='lf--input' ui-sref="county">
+	    	<p>County</p>
+	    </button>
+	  </div>
+	  <div class="flex-row">
+	    <button class='lf--input' ui-sref="city">
+	    	<p>City</p>
+	    </button>
+	  </div>
+	  <div class="flex-row">
+	    <button class='lf--submit' ng-click="finish()">I'm finished voting</button>
+	  </div>
+</nav>
