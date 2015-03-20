@@ -2,14 +2,16 @@
 	<h2 class="title">Winner</h2>
 </header>
 <main>
+
 	<section class="container">
 		<div class="banner">
 			<h3>State</h3>
 		</div>
-		<div ng-repeat="race in races">
+		<div ng-repeat="option in options | filter: 'governor'">
 			<div class="options-wrapper">
 				<span class="candidate">
-					<span>{{ race.candidate }}</span>
+					<span>{{ option.candidate }}</span>
+					<span>{{ option.sum }}</span>
 				</span>
 			</div>
 		</div>
@@ -19,11 +21,70 @@
 		<div class="banner">
 			<h3>County</h3>
 		</div>
+		<div ng-repeat="option in options | filter: 'representative'">
+			<div class="options-wrapper">
+				<span class="candidate">
+					<span>{{ option.candidate }}</span>
+					<span>{{ option.sum }}</span>
+				</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="container">
+		<div class="banner">
+			<h3>County</h3>
+		</div>
+		<div ng-repeat="option in options | filter: 'proposition'">
+			<div class="options-wrapper">
+				<span class="candidate">
+					<span>{{ option.candidate }}</span>
+					<span>{{ option.sum }}</span>
+				</span>
+			</div>
+		</div>
 	</section>
 
 	<section class="container">
 		<div class="banner">
 			<h3>City</h3>
 		</div>
+		<div ng-repeat="option in options | filter: 'law'">
+			<div class="options-wrapper">
+				<span class="candidate">
+					<span>{{ option.candidate }}</span>
+					<span>{{ option.sum }}</span>
+				</span>
+			</div>
+		</div>
 	</section>
+
+	<section class="container">
+		<div class="banner">
+			<h3>County</h3>
+		</div>
+		<div ng-repeat="option in options | filter: 'mayor'">
+			<div class="options-wrapper">
+				<span class="candidate">
+					<span>{{ option.candidate }}</span>
+					<span>{{ option.sum }}</span>
+				</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="container">
+		<div class="banner">
+			<h3>County</h3>
+		</div>
+		<div ng-repeat="option in options | filter: 'councilman'">
+			<div class="options-wrapper">
+				<span class="candidate">
+					<span>{{ option.candidate }}</span>
+					<span>{{ option.sum }}</span>
+				</span>
+			</div>
+		</div>
+	</section>
+
 </main>

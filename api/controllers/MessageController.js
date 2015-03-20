@@ -7,7 +7,7 @@
 
 module.exports = {
 	send: function(req, res) {
-		console.log('Anything');
+		console.log('Message sending...');
 
 		var accountSid = 'AC7ba7f3d13644b5ffe86e6cdbae4e2d76';
 		var authToken = "332cc9acb0abbf8a01ba066dc414c2cb";

@@ -20,11 +20,13 @@
 			<div class="race">
 				<h3>Race for State Representative</h3>
 			</div>
-			<div class="option-box" ng-repeat="representative in representatives">
-				<div class="options-wrapper">
-					<span class="candidate"></span>
-					<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">
-					<span>{{ representative.candidate }}</span>
+			<div class="choice-block">
+				<div class="option-box" ng-repeat="representative in representatives">
+					<div class="options-wrapper">
+						<span class="candidate"></span>
+						<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">
+						<span>{{ representative.candidate }}</span>
+					</div>
 				</div>
 			</div>
 
