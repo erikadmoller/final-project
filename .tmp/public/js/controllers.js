@@ -277,4 +277,73 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 			$state.go('register');
 		}
 	};
+})
+	.controller('winnerCtrl', function($scope, $http, $state) {
+
+	$scope.candidate = [];
+
+	$scope.govOption1 = [];
+	$scope.govOption2 = [];
+	$scope.govOption3 = [];
+
+	$http.get('/votes')
+	.success(function(data) {
+		// console.log(data);
+
+		var scopeTally = _.countBy(data, function(vote) {
+			return vote.choice.id
+		});
+		console.log(scopeTally);
+		// console.log(scopeTally[1]);
+
+		$http.get('/options')
+		.success(function(options) {
+			// console.log(options);
+
+			var counter = 1;
+
+			for(var i = 0; i < options.length; i++) {
+				options[i].sum = scopeTally[counter];
+				counter ++;
+				// console.log(options[i].sum);
+				// console.log(options[i].race);
+				raceTotal = options[i].race;
+				
+			}
+
+			// console.log($scope.options);
+
+		})
+
+
+		// Accumulate objects into appropriate array
+
+		// for(var i = 0; i < data.length; i++) {
+		// 	if(data[i].choice.id === 1) {
+		// 		$scope.govOption1 = data[i];
+		// 		// console.log($scope.govOption1);
+		// 	}
+		// 	if(data[i].choice.id === 2) {
+		// 		$scope.govOption2 = data[i];
+		// 		// console.log($scope.govOption2);
+		// 	}
+		// 	if(data[i].choice.id === 3) {
+		// 		$scope.govOption3 = data[i];
+		// 		// console.log($scope.govOption3);
+		// 	}
+		// }
+
+				// Compare greatest array
+
+		// if($scope.govOption1 > $scope.govOption2 && $scope.govOption1 > $scope.govOption3) {
+		// 	console.log($scope.govOption1);
+		// }
+		// else if($scope.govOption2 > $scope.govOption1 && $scope.govOption2 > $scope.govOption3) {
+		// 	console.log($scope.govOption2);
+		// }
+		// else {
+		// 	console.log($scope.govOption3);
+		// }
+	});
+
 });

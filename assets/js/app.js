@@ -38,6 +38,11 @@ angular.module('app', ['basic.controllers', 'ui.router'])
 		templateUrl: 'templates/confirmation.html',
 		controller: 'confirmationCtrl'
 	})
+	.state('winner', {
+		url: '/winner',
+		templateUrl: 'templates/winner.html',
+		controller: 'winnerCtrl'
+	})
 
 	$urlRouterProvider.otherwise('/register');
 })

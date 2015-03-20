@@ -2,32 +2,32 @@
 	<h2 class="title">State</h2>
 </header>
 
-<div class="banner">
-	<h3>Race for Governor</h3>
-</div>
 	<form class="form" ng-submit="stateSubmit(pick.governor, pick.representative)">
-		<div>
-			<div ng-repeat="governor in governors">
-				<div class="options-wrapper">
-					<span class="candidate"></span>
-					<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">
-					<span>{{ governor.candidate }}</span>
-				</div>
-			</div>
-		</div>
 
-<div class="banner">
-	<h3>Race for State Representative</h3>
-</div>
-		<div>
-			<div ng-repeat="representative in representatives">
+			<div class="race">
+				<h3>Race for Governor</h3>
+			</div>
+				<div class="choice-block">
+					<div class="option-box" ng-repeat="governor in governors">
+						<div class="options-wrapper">
+							<span class="candidate"></span>
+							<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">
+							<span>{{ governor.candidate }}</span>
+						</div>
+					</div>
+				</div>
+
+			<div class="race">
+				<h3>Race for State Representative</h3>
+			</div>
+			<div class="option-box" ng-repeat="representative in representatives">
 				<div class="options-wrapper">
 					<span class="candidate"></span>
 					<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">
 					<span>{{ representative.candidate }}</span>
 				</div>
 			</div>
-		</div>
+
 		<br><br>
 		<div class="choice-submit">
 			<button class='lf--submit' type="submit" value="submit">Submit</button>

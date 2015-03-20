@@ -9,27 +9,39 @@
   	}
 }
 
-.banner {
+.race {
 	padding: 1em 2em;
 	background-color: white;
-	padding-right: 2em;
+	// padding-right: 2em;
+	display: block;
 	width: 40%;
-
 	h3 {
 		margin: 0;
 		padding: 0;
 	}
 }
 
-.options-wrapper {
+.choice-block {
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 3em;
+}
 
-	.candidate {
-		padding: 1em 1.5em;
-		background-color: white;
-	}
+.option-box {
+	display: inline-block;
+}
+
+.options-wrapper {
+	width: 10em;
+	height: 2em;
+	background-color: white;
+	margin: 1.5em 1em 1em 1em;
+	padding: 1em;
+	border-radius: 5px;
 }
 
 .choice-submit {
 	width: 8em;
 	margin: 0 auto;
 }
+

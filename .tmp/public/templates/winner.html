@@ -1,0 +1,29 @@
+<header class="election-title">
+	<h2 class="title">Winner</h2>
+</header>
+<main>
+	<section class="container">
+		<div class="banner">
+			<h3>State</h3>
+		</div>
+		<div ng-repeat="race in races">
+			<div class="options-wrapper">
+				<span class="candidate">
+					<span>{{ race.candidate }}</span>
+				</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="container">
+		<div class="banner">
+			<h3>County</h3>
+		</div>
+	</section>
+
+	<section class="container">
+		<div class="banner">
+			<h3>City</h3>
+		</div>
+	</section>
+</main>

@@ -64,7 +64,17 @@ this["JST"]["assets/templates/state.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<header class="election-title">\n\t<h2 class="title">State</h2>\n</header>\n\n<div class="banner">\n\t<h3>Race for Governor</h3>\n</div>\n\t<form class="form" ng-submit="stateSubmit(pick.governor, pick.representative)">\n\t\t<div>\n\t\t\t<div ng-repeat="governor in governors">\n\t\t\t\t<div class="options-wrapper">\n\t\t\t\t\t<span class="candidate"></span>\n\t\t\t\t\t<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">\n\t\t\t\t\t<span>{{ governor.candidate }}</span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n<div class="banner">\n\t<h3>Race for State Representative</h3>\n</div>\n\t\t<div>\n\t\t\t<div ng-repeat="representative in representatives">\n\t\t\t\t<div class="options-wrapper">\n\t\t\t\t\t<span class="candidate"></span>\n\t\t\t\t\t<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">\n\t\t\t\t\t<span>{{ representative.candidate }}</span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<br><br>\n\t\t<div class="choice-submit">\n\t\t\t<button class=\'lf--submit\' type="submit" value="submit">Submit</button>\n\t\t</div>\n\t</form>\n\n\n';
+__p += '<header class="election-title">\n\t<h2 class="title">State</h2>\n</header>\n\n\t<form class="form" ng-submit="stateSubmit(pick.governor, pick.representative)">\n\n\t\t\t<div class="race">\n\t\t\t\t<h3>Race for Governor</h3>\n\t\t\t</div>\n\t\t\t\t<div class="choice-block">\n\t\t\t\t\t<div class="option-box" ng-repeat="governor in governors">\n\t\t\t\t\t\t<div class="options-wrapper">\n\t\t\t\t\t\t\t<span class="candidate"></span>\n\t\t\t\t\t\t\t<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">\n\t\t\t\t\t\t\t<span>{{ governor.candidate }}</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t<div class="race">\n\t\t\t\t<h3>Race for State Representative</h3>\n\t\t\t</div>\n\t\t\t<div class="option-box" ng-repeat="representative in representatives">\n\t\t\t\t<div class="options-wrapper">\n\t\t\t\t\t<span class="candidate"></span>\n\t\t\t\t\t<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">\n\t\t\t\t\t<span>{{ representative.candidate }}</span>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t<br><br>\n\t\t<div class="choice-submit">\n\t\t\t<button class=\'lf--submit\' type="submit" value="submit">Submit</button>\n\t\t</div>\n\t</form>\n\n\n';
+
+}
+return __p
+};
+
+this["JST"]["assets/templates/winner.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<header class="election-title">\n\t<h2 class="title">Winner</h2>\n</header>\n<main>\n\t<section class="container">\n\t\t<div class="banner">\n\t\t\t<h3>State</h3>\n\t\t</div>\n\t\t<div ng-repeat="race in races">\n\t\t\t<div class="options-wrapper">\n\t\t\t\t<span class="candidate">\n\t\t\t\t\t<span>{{ race.candidate }}</span>\n\t\t\t\t</span>\n\t\t\t</div>\n\t\t</div>\n\t</section>\n\n\t<section class="container">\n\t\t<div class="banner">\n\t\t\t<h3>County</h3>\n\t\t</div>\n\t</section>\n\n\t<section class="container">\n\t\t<div class="banner">\n\t\t\t<h3>City</h3>\n\t\t</div>\n\t</section>\n</main>';
 
 }
 return __p
