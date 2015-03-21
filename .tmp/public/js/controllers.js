@@ -292,15 +292,54 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		console.log(scopeTally);
 		// console.log(scopeTally[1]);
 
-		$http.get('/options')
+		$http.get('/options?race=governor')
 		.success(function(options) {
 			// console.log(options);
 
 			for(var i = 0; i < options.length; i++) {
 				options[i].sum = scopeTally[options[i].id];
+				console.log(options[i].sum);
 				$scope.options.push(options[i]);
 			}
-			console.log($scope.options);
+			console.log(options);
+
+			// 	// find total votes of governor race				
+			var total = 0;
+			for(var i in options) { 
+				total += options[i].sum; 
+				$scope.max = total;
+			}
+			console.log($scope.max);
+
+			// 	// find percentage of candidate's sum votes			
+			// // var percentage = [];
+			// for(var i in options) {
+			// 	options[i].sum = ((options[i].sum / total) * 100);
+			// 	$scope.options.push(options[i]);
+			// }
+			// // console.log(percentage);
+			// console.log($scope.options);
+
+
+			    // Options
+    
+    $scope.width = 600;
+    $scope.height = 350;
+    // $scope.yAxis = 'Sales';
+    // $scope.xAxis = '2014';
+    
+    // Find Maximum X & Y Axis Values - this is used to position the data as a percentage of the maximum
+    // $scope.max = 0;
+    console.log($scope.max);
+    
+    var arrLength = $scope.options.length;
+    for (var i = 0; i < arrLength; i++) {
+        // Find Maximum X Axis Value
+        if ($scope.options[i].sum > $scope.max)
+        $scope.max = $scope.options[i].sum;
+    }
+   
+
 		})
 	});
 

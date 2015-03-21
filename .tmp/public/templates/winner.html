@@ -11,10 +11,22 @@
 			<div class="options-wrapper">
 				<span class="candidate">
 					<span>{{ option.candidate }}</span>
-					<span>{{ option.sum }}</span>
+					<span>{{ option.sum + "%"}}</span>
 				</span>
 			</div>
 		</div>
+
+	<!--bar chart-->
+    <h2>Bar Chart</h2>
+    <div class="chart" style="width:{{width}}px; height:{{height}}px;">
+	      <!-- Labels -->
+	     <!--  <div class="y" style="width:{{height}}px;">{{yAxis}}</div>
+	      		<div class="x">{{xAxis}}</div> -->
+	     		 <!-- Data -->
+	       		<div ng-repeat="bar in options" class="bar" style="height:{{bar.sum / max * height}}px; width:{{width / options.length - 5}}px; left:{{$index / options.length * width}}px;">
+	       		</div>
+    </div>
+
 	</section>
 
 	<section class="container">
