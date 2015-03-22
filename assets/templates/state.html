@@ -9,10 +9,14 @@
 			</div>
 				<div class="choice-block">
 					<div class="option-box" ng-repeat="governor in governors">
-						<div class="options-wrapper">
-							<span class="candidate"></span>
-							<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">
-							<span>{{ governor.candidate }}</span>
+						<div>
+							<div class="img-container">
+								<img ng-src="{{ governor.image }}">
+							</div>
+							<span class="candidate">{{ governor.candidate }}</span>
+							<div>
+								<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">
+							</div>
 						</div>
 					</div>
 				</div>

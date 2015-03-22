@@ -10,7 +10,9 @@ module.exports = {
   attributes: {
   	race: { type: 'string', required: true },
   	candidate: { type: 'string', required: true },
-  	year: { type: 'integer', required: true }
+  	year: { type: 'integer', required: true },
+  	image: { type: 'string', required: false },
+  	party: { type: 'string', required: false }
 
   }
 };

@@ -163,7 +163,9 @@ p {
   margin-bottom: 3em; }
 
 .option-box {
-  display: inline-block; }
+  display: inline-block;
+  background-color: white;
+  margin: 0.5em; }
 
 .options-wrapper {
   width: 10em;
@@ -176,6 +178,17 @@ p {
 .choice-submit {
   width: 8em;
   margin: 0 auto; }
+
+.img-container {
+  height: 5em;
+  width: 5em;
+  background-color: white; }
+
+img {
+  max-height: 100%; }
+
+.candidate {
+  font-size: 0.3em; }
 
 .chart {
   border-left: 1px solid black;
