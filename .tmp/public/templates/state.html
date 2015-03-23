@@ -9,17 +9,37 @@
 			</div>
 				<div class="choice-block">
 					<div class="option-box" ng-repeat="governor in governors">
-						<div>
-							<div class="img-container">
-								<img ng-src="{{ governor.image }}">
+						<div class="img-container">
+							<img ng-src="{{ governor.image }}">
+						</div>
+						<div class="candidate-wrapper">
+							<div class="candidate">{{ governor.candidate }}
 							</div>
-							<span class="candidate">{{ governor.candidate }}</span>
-							<div>
-								<input ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect">
+							<div class="party">{{ governor.party }}
+							</div>
+						</div>
+				
+
+				<!-- 			<input class="choice-button" ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect"> -->
+
+						<div class="codpen">
+							<div class="container">
+								<ul>
+									<li>
+									    <input ng-value="governor.id" ng-model="pick.governor" name="govSelect" type="radio" id="f-option">
+									    <label for="f-option">Select</label>
+									    <div class="check">
+									    	<div class="inside"></div>
+									    </div>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
+				
 
 			<div class="race">
 				<h3>Race for State Representative</h3>
@@ -33,7 +53,6 @@
 					</div>
 				</div>
 			</div>
-
 		<br><br>
 		<div class="choice-submit">
 			<button class='lf--submit' type="submit" value="submit">Submit</button>
