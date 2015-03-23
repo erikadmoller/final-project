@@ -43,9 +43,42 @@
 					</div>
 
 
+					<div class="race">
+						<h3>Race for State Representative</h3>
+					
+						<div class="choice-block">
+							<div class="option-box" ng-repeat="representative in representatives">
+								<div class="img-container">
+									<img ng-src="{{ representative.image }}">
+								</div>
+								<div class="candidate-wrapper">
+									<div class="candidate">{{ representative.candidate }}
+									</div>
+									<div class="party">{{ representative.party }}
+									</div>
+								</div>
 						
 
-					<div class="race">
+						<!-- 			<input class="choice-button" ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect"> -->
+
+								<div class="codpen">
+									<div class="container">
+										<ul>
+											<li>
+											    <input ng-value="representative.id" ng-model="pick.representative" name="repSelect" type="radio" id="f-option">
+											    <label for="f-option">Select</label>
+											    <div class="check">
+											    	<div class="inside"></div>
+											    </div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+
+					<!-- <div class="race">
 						<h3>Race for State Representative</h3>
 					</div>
 					<div class="choice-block">
@@ -56,7 +89,7 @@
 								<span>{{ representative.candidate }}</span>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				<br><br>
 				<div class="choice-submit">
 					<button class='lf--submit' type="submit" value="submit">Vote</button>

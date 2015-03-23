@@ -191,6 +191,24 @@ body {
   padding: 0.3em;
   vertical-align: top; }
 
+@media (max-width: 730px) {
+  .option-box {
+    min-width: 250px;
+    margin: 9.6px;
+    padding: 7.2px; }
+
+  .codpen {
+    width: 3em;
+    float: left;
+    position: absolute;
+    margin-left: 4.5em; }
+
+  .candidate-wrapper {
+    width: 98%;
+    float: left;
+    height: 3.5em;
+    margin: 0.6em 0 0.6em 0.6em;
+    border-bottom: 1.8px solid #ECF0F1; } }
 .img-container {
   height: 4em;
   width: 4em;
