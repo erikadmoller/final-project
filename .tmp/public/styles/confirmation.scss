@@ -4,14 +4,74 @@
 
 .confirm-title	h1 {
 	font-size: 4em;
-	margin: 0;
+	margin: 1em 0 0 0;
 	color: #35c3c1;
 	text-align: center;
 }
 
 .confirm-title	h2 {
-	margin: 0;
+	margin: 2em 0 0 0;
 	padding-top: 1em;
 	color: #fff;
+	font-size: 1em;
+	text-align: center;
+}
+
+.confirm-form {
+  width: 13em;
+  padding: 2em;
+  position: relative;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+}
+
+.input-confirm {
+	flex: 1;
+	padding: 1em;
+	border: 0;
+	color: $gray;
+	font-size: 1rem;
+	background-color: white;
+	width: 8em;
+
+		&:focus {
+		  outline: none;
+		  transition: transform .15s ease;
+		  transform: scale(1.1);
+		}
+}
+
+.button-confirm {
+	padding: 1em;
+	width: 100%;
+	margin-left: 1em;
+
+	background: linear-gradient(
+	  to right,
+	  $green-dark,
+	  $green-light
+	);
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: .75em;
+	font-weight: 600;
+	text-shadow: 0 1px 0 rgba(black, .2);
+
+	  &:focus {
+	    outline: none;
+	    transition: transform .15s ease;
+	    transform: scale(1.1);
+	  }
+}
+
+.confirm-error {
+	// margin: 1em;
+	color: #fff;
+	font-size: 1em;
 	text-align: center;
 }

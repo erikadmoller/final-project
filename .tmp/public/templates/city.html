@@ -23,21 +23,22 @@
 								</div>
 						
 
-									<input class="choice-button" ng-value="mayor.id" type="radio" ng-model="pick.mayor" name="maySelect">
+									<!-- <input class="choice-button" ng-value="mayor.id" type="radio" ng-model="pick.mayor" name="maySelect"> -->
 
-								<!-- <div class="codpen">
+								<div class="codpen">
 									<div class="container">
 										<ul>
 											<li>
-											    <input ng-value="governor.id" ng-model="pick.governor" name="govSelect" type="radio" id="f-option">
-											    <label for="f-option">Select</label>
+											    <input ng-value="mayor.id" ng-model="pick.mayor" name="maySelect" type="radio" id="f-option{{ mayor.id }}">
+
+											    <label for="f-option{{ mayor.id }}">Select</label>
 											    <div class="check">
 											    	<div class="inside"></div>
 											    </div>
 											</li>
 										</ul>
 									</div>
-								</div> -->
+								</div>
 							</div>
 						</div>
 					</div>
@@ -58,22 +59,23 @@
 									</div>
 								</div>
 						
+<!-- 
+									<input class="choice-button" ng-value="councilman.id" type="radio" ng-model="pick.councilman" name="councSelect"> -->
 
-									<input class="choice-button" ng-value="councilman.id" type="radio" ng-model="pick.councilman" name="councSelect">
-
-								<!-- <div class="codpen">
+								<div class="codpen">
 									<div class="container">
 										<ul>
 											<li>
-											    <input ng-value="representative.id" ng-model="pick.representative" name="repSelect" type="radio" id="f-option">
-											    <label for="f-option">Select</label>
+											    <input ng-value="councilman.id" ng-model="pick.councilman" name="councSelect" type="radio" id="f-option{{ councilman.id }}">
+
+											    <label for="f-option{{ councilman.id }}">Select</label>
 											    <div class="check">
 											    	<div class="inside"></div>
 											    </div>
 											</li>
 										</ul>
 									</div>
-								</div> -->
+								</div>
 							</div>
 						</div>
 					</div>	

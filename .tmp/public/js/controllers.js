@@ -1,20 +1,43 @@
 angular.module('basic.controllers', ['basic.services', 'ui.router'])
-.controller('loginCtrl', function($scope, $http, $state) {
+.controller('loginCtrl', function($scope, $http, $state, Validate) {
 	
 	$scope.user = {
-		email: '',
+		password: '',
 		identifier: ''
 	}
 
+	$scope.error = {
+		email: '',
+		password: ''
+	}
+
 	$scope.loginSubmit = function(user) {
-		user.username = user.email;
+		user.email = user.identifier;
 		console.log(user);
+
+		$scope.error = Validate.credentials(user);
+		console.log($scope.error);
+
+
+		if(!Validate.hasError($scope.error)) {
+			var user = {
+			 	password: user.password,
+			 	identifier: user.email,
+			 };
+		 console.log(user);
 
 		$http.post('/auth/local', user)
 		.success(function(response) {
 			console.log(response);
 			$state.go('elections');
 		})
+
+		.error(function(err) {
+				console.log('Error!');
+				console.log(err);
+				$scope.loginErrorMsg = err.summary;
+			});
+	};
 
 	};
 })
@@ -48,12 +71,15 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		ssn: ''
 	}
 
+
 	$scope.registerSubmit = function(user) {
 		// console.log(user);
 		user.username = user.email;
 
 		$scope.error = Validate.credentials(user);
 		console.log($scope.error);
+
+
 
 		if(!Validate.hasError($scope.error)) {
 			var user = {
@@ -104,6 +130,10 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 
 	$scope.governors = [];
 	$scope.representatives = [];
+	$scope.userVote = {
+		userId: '',
+		id: ''
+	}
 
 	$http.get('/options?race=governor')
 	.success(function(states) {
@@ -127,6 +157,10 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		console.log(governorChoice, representativeChoice);
 		// console.log($scope.pick);
 		// console.log($scope.user);
+
+		// $http.get('/auth/user') {
+			
+		// }
 
 		var userGovChoice = {
 			userId: 1,
@@ -260,8 +294,16 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 .controller('confirmationCtrl', function($scope, $http, $state) {
 
 	$scope.textUpdate = false;
+	$scope.confirmErrorShow = false;
 
 	$scope.confirmSubmit = function(textConfirm) {
+		console.log(textConfirm);
+
+		// validate that a selection was made
+		if(validator.isNull(textConfirm)) {
+			$scope.confirmErrorMsg = "Please select yes or no";
+			$scope.confirmErrorShow = true;
+		}
 
 		if(textConfirm === 'yes') {
 			$scope.textUpdate = true;
@@ -270,7 +312,7 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 					console.log(response);
 				})
 		}
-		else {
+		else if(textConfirm === 'no') {
 			$http.get('/logout')
 				.success(function(response) {
 					console.log(response);

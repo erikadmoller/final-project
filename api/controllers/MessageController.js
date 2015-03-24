@@ -18,7 +18,7 @@ module.exports = {
 		}
 		else { 
 			client.messages.create({
-			    body: "You've been signed up for live election updates",
+			    body: "You will receive live election updates",
 			    to: req.user.phone,
 			    from: "+13143120866"
 			}, function(err, message) {

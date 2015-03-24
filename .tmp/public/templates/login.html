@@ -25,6 +25,11 @@
 		    <input id="password" class='lf--input' placeholder='Enter your password' type='password' ng-model="user.password">
 		  </div>
 			<button class='lf--submit' type='submit'>LOGIN</button>
+			<div ng-bind="error.email" class="error"></div>
+		  	<div>
+		  	<div ng-bind="error.password" class="error"></div>
+		  	<div>
+		  	<div ng-bind="loginErrorMsg" class="error"></div>
 		</form>
 	</div>
 </div>

@@ -17,21 +17,22 @@
 								</div>
 						
 
-									<input class="input-choice" ng-value="proposition.id" type="radio" ng-model="pick.proposition" name="propSelect">
+									<!-- <input class="input-choice" ng-value="proposition.id" type="radio" ng-model="pick.proposition" name="propSelect"> -->
 
-								<!-- <div class="codpen">
+								<div class="sm-ballot-box">
 									<div class="container">
 										<ul>
 											<li>
-											    <input ng-value="governor.id" ng-model="pick.governor" name="govSelect" type="radio" id="f-option">
-											    <label for="f-option">Select</label>
+											    <input ng-value="proposition.id" ng-model="pick.proposition" name="propSelect" type="radio" id="f-option{{ proposition.id }}">
+
+											    <label for="f-option{{ proposition.id }}">Select</label>
 											    <div class="check">
 											    	<div class="inside"></div>
 											    </div>
 											</li>
 										</ul>
 									</div>
-								</div> -->
+								</div>
 							</div>
 						</div>
 					</div>
@@ -51,22 +52,23 @@
 									</div>
 								</div>
 						
+<!-- 
+									<input class="input-choice" ng-value="law.id" type="radio" ng-model="pick.law" name="lawSelect"> -->
 
-									<input class="input-choice" ng-value="law.id" type="radio" ng-model="pick.law" name="lawSelect">
-
-								<!-- <div class="codpen">
+								<div class="sm-ballot-box">
 									<div class="container">
 										<ul>
 											<li>
-											    <input ng-value="representative.id" ng-model="pick.representative" name="repSelect" type="radio" id="f-option">
-											    <label for="f-option">Select</label>
+											    <input ng-value="law.id" ng-model="pick.law" name="lawSelect" type="radio" id="f-option{{ law.id }}">
+
+											    <label for="f-option{{ law.id }}">Select</label>
 											    <div class="check">
 											    	<div class="inside"></div>
 											    </div>
 											</li>
 										</ul>
 									</div>
-								</div> -->
+								</div>
 							</div>
 						</div>
 					</div>	

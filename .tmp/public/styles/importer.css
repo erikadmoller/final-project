@@ -137,9 +137,37 @@ body {
 ::placeholder {
   color: #8f8f8f; }
 
+.login-button {
+  width: 100%;
+  padding: 1em;
+  margin: 3em 0 0 0;
+  background: linear-gradient(to right, #e74c3c, #ed7669);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: .75em;
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+.error {
+  color: white;
+  margin-top: 1em; }
+
 p {
   margin: 0;
-  color: #4D4D4D; }
+  color: #34495E; }
+
+.select-button {
+  width: 100%;
+  padding: 1em;
+  margin-top: 0.2em;
+  background: linear-gradient(to right, #FFFFFF, #FFFFFF, #BABFD4);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: .75em;
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
 
 .page {
   text-align: center;
@@ -339,7 +367,6 @@ input[type=radio]:checked ~ label {
   width: 2em;
   float: left;
   height: 1em;
-  margin: 0.6em 0 0.6em 0.6em;
   border-bottom: 1.8px solid #ECF0F1; }
 
 .yes-no-box {
@@ -351,8 +378,11 @@ input[type=radio]:checked ~ label {
   padding: 0.3em;
   vertical-align: top; }
 
-.input-choice {
-  margin-top: 2em; }
+.sm-ballot-box {
+  width: 6em;
+  /* height: 2em; */
+  float: left;
+  margin-top: 0.3em; }
 
 .graph {
   height: 1.5em;
@@ -415,14 +445,60 @@ input[type=radio]:checked ~ label {
 
 .confirm-title h1 {
   font-size: 4em;
-  margin: 0;
+  margin: 1em 0 0 0;
   color: #35c3c1;
   text-align: center; }
 
 .confirm-title h2 {
-  margin: 0;
+  margin: 2em 0 0 0;
   padding-top: 1em;
   color: #fff;
+  font-size: 1em;
+  text-align: center; }
+
+.confirm-form {
+  width: 13em;
+  padding: 2em;
+  position: relative;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto; }
+
+.input-confirm {
+  flex: 1;
+  padding: 1em;
+  border: 0;
+  color: #8f8f8f;
+  font-size: 1rem;
+  background-color: white;
+  width: 8em; }
+  .input-confirm:focus {
+    outline: none;
+    transition: transform .15s ease;
+    transform: scale(1.1); }
+
+.button-confirm {
+  padding: 1em;
+  width: 100%;
+  margin-left: 1em;
+  background: linear-gradient(to right, #35c3c1, #00d6b7);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: .75em;
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+  .button-confirm:focus {
+    outline: none;
+    transition: transform .15s ease;
+    transform: scale(1.1); }
+
+.confirm-error {
+  color: #fff;
+  font-size: 1em;
   text-align: center; }
 
 /*# sourceMappingURL=importer.css.map */

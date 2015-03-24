@@ -22,7 +22,7 @@
 		        </g>
 		      </svg> -->
 		    </label>
-		    <input id="password" class='lf--input' placeholder='Create a password' type='password' ng-model="user.password">
+		    <input id="password" class='lf--input' placeholder='Create a password' type='password' ng-model="user.password" ng-bind="error.password">
 		  </div>
 		  <div class="flex-row">
 		    <label class="lf--label" for="username"></label>
@@ -125,15 +125,12 @@
 		  </div>
 
 		  <button class='lf--submit' type='submit'>REGISTER</button>
+		  <div ng-bind="error.email" class="error"></div>
+		  <div>
+		  <div ng-bind="error.password" class="error"></div>
+		  <div>
+		  <button class='login-button' ui-sref="login">Login</button>
+
 	</form>
 </div>
-		<div>
-			<span ng-show="alert">
-				<h3>You are already registered to vote</h3>
-				<button type="button">
-				<a ui-sref="elections">My Elections</a>
-				</button>
-				<!-- Redirects to Elections list page -->
-			</span>
-		</div>
 </body>

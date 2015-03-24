@@ -1,4 +1,17 @@
 p {
 	margin: 0;
-	color: #4D4D4D;
+	color: #34495E;
+}
+
+.select-button {
+  width: 100%;
+  padding: 1em;
+  margin-top: 0.2em;
+  background: linear-gradient(to right, #FFFFFF, #FFFFFF, #BABFD4);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: .75em;
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }

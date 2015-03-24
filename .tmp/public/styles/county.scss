@@ -2,7 +2,7 @@
   	width: 2em;
   	float: left;
   	height: 1em;
-  	margin: 0.6em 0 0.6em 0.6em;
+  	// margin: 0.6em 0 0.6em 0.6em;
   	border-bottom: 1.8px solid #ECF0F1;
 }
 
@@ -13,9 +13,16 @@
   	width: 4em;
   	border-radius: 3px;
   	padding: 0.3em;
-  vertical-align: top;
+    vertical-align: top;
 }
 
-.input-choice {
-	margin-top: 2em;
+// .input-choice {
+// 	margin-top: 2em;
+// }
+
+.sm-ballot-box {
+  width: 6em;
+  /* height: 2em; */
+  float: left;
+  margin-top: 0.3em;
 }
