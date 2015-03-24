@@ -233,7 +233,8 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		// console.log($scope.user);
 
 		var userMayChoice = {
-			userId: 1,
+			userId: 1, 
+			// user.id
 			choice: mayorChoice
 		};
 
@@ -282,65 +283,186 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 
 	$scope.options = [];
 
-	$http.get('/votes')
+	$http.get('/votes?limit=1000000')
 	.success(function(data) {
-		// console.log(data);
+		console.log(data);
 
 		var scopeTally = _.countBy(data, function(vote) {
 			return vote.choice.id
 		});
-		console.log(scopeTally);
-		// console.log(scopeTally[1]);
 
 		$http.get('/options?race=governor')
 		.success(function(options) {
-			// console.log(options);
 
 			for(var i = 0; i < options.length; i++) {
 				options[i].sum = scopeTally[options[i].id];
-				console.log(options[i].sum);
-				$scope.options.push(options[i]);
+				// console.log(options[i].sum);
 			}
-			console.log(options);
 
-			// 	// find total votes of governor race				
+			// 	// find total votes of governor race for charting			
 			var total = 0;
 			for(var i in options) { 
 				total += options[i].sum; 
 				$scope.max = total;
 			}
-			console.log($scope.max);
+			// console.log($scope.max);
 
-			// 	// find percentage of candidate's sum votes			
-			// // var percentage = [];
-			// for(var i in options) {
-			// 	options[i].sum = ((options[i].sum / total) * 100);
-			// 	$scope.options.push(options[i]);
-			// }
-			// // console.log(percentage);
+				// find percentage of candidate's sum votes			
+			for(var i in options) {
+				options[i].sum = Math.floor((options[i].sum / total) * 100);
+				// console.log(options[i].sum);
+				$scope.options.push(options[i]);
+			}
 			// console.log($scope.options);
-
-
-			    // Options
-    
-    $scope.width = 600;
-    $scope.height = 350;
-    // $scope.yAxis = 'Sales';
-    // $scope.xAxis = '2014';
-    
-    // Find Maximum X & Y Axis Values - this is used to position the data as a percentage of the maximum
-    // $scope.max = 0;
-    console.log($scope.max);
-    
-    var arrLength = $scope.options.length;
-    for (var i = 0; i < arrLength; i++) {
-        // Find Maximum X Axis Value
-        if ($scope.options[i].sum > $scope.max)
-        $scope.max = $scope.options[i].sum;
-    }
    
-
 		})
+
+		$http.get('/options?race=representative')
+		.success(function(options) {
+
+			for(var i = 0; i < options.length; i++) {
+				options[i].sum = scopeTally[options[i].id];
+				// console.log(options[i].sum);
+			}
+
+			// 	// find total votes of governor race for charting			
+			var total = 0;
+			for(var i in options) { 
+				total += options[i].sum; 
+				$scope.max = total;
+			}
+			// console.log($scope.max);
+
+				// find percentage of candidate's sum votes			
+			for(var i in options) {
+				options[i].sum = Math.floor((options[i].sum / total) * 100);
+				// console.log(options[i].sum);
+				$scope.options.push(options[i]);
+			}
+			// console.log($scope.options);
+   
+		})
+
+		$http.get('/options?race=proposition')
+		.success(function(options) {
+
+			for(var i = 0; i < options.length; i++) {
+				options[i].sum = scopeTally[options[i].id];
+				// console.log(options[i].sum);
+			}
+
+			// 	// find total votes of governor race for charting			
+			var total = 0;
+			for(var i in options) { 
+				total += options[i].sum; 
+				$scope.max = total;
+			}
+			// console.log($scope.max);
+
+				// find percentage of candidate's sum votes			
+			for(var i in options) {
+				options[i].sum = Math.floor((options[i].sum / total) * 100);
+				// console.log(options[i].sum);
+				$scope.options.push(options[i]);
+			}
+			// console.log($scope.options);		
+		})
+
+		$http.get('/options?race=law')
+		.success(function(options) {
+
+			for(var i = 0; i < options.length; i++) {
+				options[i].sum = scopeTally[options[i].id];
+				// console.log(options[i].sum);
+			}
+
+			// 	// find total votes of governor race for charting			
+			var total = 0;
+			for(var i in options) { 
+				total += options[i].sum; 
+				$scope.max = total;
+			}
+			// console.log($scope.max);
+
+				// find percentage of candidate's sum votes			
+			for(var i in options) {
+				options[i].sum = Math.floor((options[i].sum / total) * 100);
+				// console.log(options[i].sum);
+				$scope.options.push(options[i]);
+			}
+			// console.log($scope.options);
+		})
+
+		$http.get('/options?race=mayor')
+		.success(function(options) {
+
+			for(var i = 0; i < options.length; i++) {
+				options[i].sum = scopeTally[options[i].id];
+				// console.log(options[i].sum);
+			}
+
+			// 	// find total votes of governor race for charting			
+			var total = 0;
+			for(var i in options) { 
+				total += options[i].sum; 
+				$scope.max = total;
+			}
+			// console.log($scope.max);
+
+				// find percentage of candidate's sum votes			
+			for(var i in options) {
+				options[i].sum = Math.floor((options[i].sum / total) * 100);
+				// console.log(options[i].sum);
+				$scope.options.push(options[i]);
+			}
+			// console.log($scope.options);
+   
+		})
+
+		$http.get('/options?race=councilman')
+		.success(function(options) {
+
+			for(var i = 0; i < options.length; i++) {
+				options[i].sum = scopeTally[options[i].id];
+				// console.log(options[i].sum);
+			}
+
+			// 	// find total votes of governor race for charting			
+			var total = 0;
+			for(var i in options) { 
+				total += options[i].sum; 
+				$scope.max = total;
+			}
+			// console.log($scope.max);
+
+				// find percentage of candidate's sum votes			
+			for(var i in options) {
+				options[i].sum = Math.floor((options[i].sum / total) * 100);
+				// console.log(options[i].sum);
+				$scope.options.push(options[i]);
+			}
+			// console.log($scope.options);
+   
+		})
+
+		// Creating the chart
+
+		    $scope.height = 100;
+		    $scope.width = 150;
+		    // $scope.yAxis = 'Sales';
+		    // $scope.xAxis = '2014';
+		    
+		    // Find Maximum X & Y Axis Values - this is used to position the data as a percentage of the maximum
+		    // $scope.max = 0;
+		    // console.log($scope.max);
+		    
+		    var arrLength = $scope.options.length;
+		 //    for (var i = 0; i < arrLength; i++) {
+		 //        // Find Maximum X Axis Value
+		 //        if($scope.options[i].sum > $scope.max) {
+		 //        $scope.max = $scope.options[i].sum;
+		 //    	}
+			// }
 	});
 
 });

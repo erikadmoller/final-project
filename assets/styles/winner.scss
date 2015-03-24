@@ -1,33 +1,88 @@
-.chart {
-  border-left:1px solid black;
-  border-bottom:1px solid black;
-  margin:60px auto;
-  position:relative;
+$dark: #5E5E5E;
+
+.page {
+  
 }
 
-// .y {
-//   position:absolute;
-//   transform:rotate(-90deg);
-//   transform-origin: bottom left;
-//   bottom:0;
-//   padding:5px;
+.graph {
+  height: 1.5em;
+  padding: 0.1em 1em;
+}
+
+.person {
+  width: 12em;
+  height: 100%;
+  background: #eee;
+  float: left;
+}
+
+.bar-graph {
+  height: 100%;
+  background: #E74C3C;
+  overflow: hidden;
+  font-size: 0.7em;
+  text-align: right;
+  font-family: $serif;
+  font-weight: 400;
+  color: white;
+
+}
+
+.result {
+  font-size: 0.7em;
+  text-align: left;
+  font-family: $serif;
+  font-weight: 400;
+  color: #2E2E2E;
+  padding-left: 0.5em;
+
+  h4 {
+    margin: 0.5em;
+  }
+}
+
+.stat {
+  padding-right: 0.5em;
+
+  h4 {
+    margin: 0.5em;
+  }
+}
+
+// .candidate-results {
+//   display: inline-block;
+//   margin: 1em;
 // }
 
-// .x {
-//   position:absolute;
-//   top:100%;
-//   width:100%;
-//   padding:5px;
+.race-sections {
+  margin: 1em 0;
+}
+
+// .results-wrapper {
+//   display: block;
 // }
 
-// Bar Chart
+.race-name {
+  background: #ECF0F1;
+  text-align: left;
+  font-family: $serif;
+  font-weight: 700;
+  color: #2E2E2E;
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 1em;
+  margin-bottom: 2em;
+}
 
 .bar  {
-  background:blue;
-  position:absolute;
-  bottom:0;
+  background: $dark;
+  // position:relative;
+  // bottom:0;
+  // left: 10px;
+  display: inline-block;
+  margin: 0 0.1em;
   
   &:nth-of-type(even) {
-    background:red;
+    background:lighten($dark , 30% );
   }
 }

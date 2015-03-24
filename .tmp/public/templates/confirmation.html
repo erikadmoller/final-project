@@ -1,17 +1,21 @@
-<h1>Thanks for Voting!</h1>
-<br><br>
-<div>
-	<div>
-		<h3>Would you like to receive text message updates?</h3>
-	</div>
-	<form class="form" ng-submit="confirmSubmit(textConfirm)">
-		<div>
-			<select name="confirmation" size="1" ng-model="textConfirm">
-				<option value="yes">Yes</option>
-				<option value="no">No</option>
-			</select>
-			<button type="submit" value="submit">Submit</button>
+<div class="confirm-title">
+	<h1>You have voted!</h1>
+	<h2>Would you like to receive text message updates?</h2>
+</div>
+	<form class="login-form" ng-submit="confirmSubmit(textConfirm)">
+		<div class="flex-row">
+		    <label class="lf--label" for="username"></label>
+			<div class="dropdown-backgd">
+			    <select name="confirmation" size="1" class='lf--input dropdown' type='text' ng-model="textConfirm">
+	    			<option value="">Select</option>
+	    			<option value="yes">Yes</option>
+	    			<option value="no">No</option>
+			    </select>
+		    </div>
+		  </div>
+			<button class="lf--submit" type="submit" value="submit">Submit</button>
 		</div>
 	</form>
-	<div ng-show="textUpdate">We will send you text message updates</div>
-</div>
+	<div class="wrapper" ng-show="textUpdate">
+		<h2>We will send you text message updates</h2>
+	</div>

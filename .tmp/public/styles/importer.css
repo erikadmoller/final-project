@@ -138,12 +138,14 @@ body {
   color: #8f8f8f; }
 
 p {
-  margin: 0; }
+  margin: 0;
+  color: #4D4D4D; }
 
-body {
+.page {
   text-align: center;
   background: #ECF0F1;
-  padding: 0px; }
+  padding: 0;
+  margin: 0; }
 
 .ballot {
   display: block;
@@ -220,7 +222,6 @@ body {
 
 img {
   max-width: 100%;
-  max-height: 100%;
   background-color: white; }
 
 .candidate-wrapper {
@@ -286,7 +287,8 @@ ul li {
 
 ul li input[type=radio] {
   position: absolute;
-  top: -9999px; }
+  top: -9999px;
+  display: none; }
 
 ul li label {
   display: block;
@@ -333,17 +335,94 @@ input[type=radio]:checked ~ .check .inside {
 input[type=radio]:checked ~ label {
   color: #0DFF92; }
 
-.chart {
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  margin: 60px auto;
-  position: relative; }
+.yes-no-wrapper {
+  width: 2em;
+  float: left;
+  height: 1em;
+  margin: 0.6em 0 0.6em 0.6em;
+  border-bottom: 1.8px solid #ECF0F1; }
+
+.yes-no-box {
+  display: inline-block;
+  background-color: #ECF0F1;
+  margin: 0.5em;
+  width: 4em;
+  border-radius: 3px;
+  padding: 0.3em;
+  vertical-align: top; }
+
+.input-choice {
+  margin-top: 2em; }
+
+.graph {
+  height: 1.5em;
+  padding: 0.1em 1em; }
+
+.person {
+  width: 12em;
+  height: 100%;
+  background: #eee;
+  float: left; }
+
+.bar-graph {
+  height: 100%;
+  background: #E74C3C;
+  overflow: hidden;
+  font-size: 0.7em;
+  text-align: right;
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  color: white; }
+
+.result {
+  font-size: 0.7em;
+  text-align: left;
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  color: #2E2E2E;
+  padding-left: 0.5em; }
+  .result h4 {
+    margin: 0.5em; }
+
+.stat {
+  padding-right: 0.5em; }
+  .stat h4 {
+    margin: 0.5em; }
+
+.race-sections {
+  margin: 1em 0; }
+
+.race-name {
+  background: #ECF0F1;
+  text-align: left;
+  font-family: "Noto Serif", serif;
+  font-weight: 700;
+  color: #2E2E2E;
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 1em;
+  margin-bottom: 2em; }
 
 .bar {
-  background: blue;
-  position: absolute;
-  bottom: 0; }
+  background: #5E5E5E;
+  display: inline-block;
+  margin: 0 0.1em; }
   .bar:nth-of-type(even) {
-    background: red; }
+    background: #ababab; }
+
+.confirm-title {
+  margin: 2em; }
+
+.confirm-title h1 {
+  font-size: 4em;
+  margin: 0;
+  color: #35c3c1;
+  text-align: center; }
+
+.confirm-title h2 {
+  margin: 0;
+  padding-top: 1em;
+  color: #fff;
+  text-align: center; }
 
 /*# sourceMappingURL=importer.css.map */

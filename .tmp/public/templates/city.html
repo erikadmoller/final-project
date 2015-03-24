@@ -1,40 +1,88 @@
-<h2>Your city elections</h2>
+<div class="page">
+	<div class="ballot">
+		<header class="election-title">
+			<h1>This is your ballot</h2>
+			<h2>City</h3>
+		</header>
 
-<div>
-	<div>
-		<h3>For the race of</h3>
-		<h3>MAYOR</h3>
+			<form class="form" ng-submit="citySubmit(pick.mayor, pick.councilman)">
+
+					<div class="race">
+						<h3>Race for Mayor</h3>
+					
+						<div class="choice-block">
+							<div class="option-box" ng-repeat="mayor in mayors">
+								<div class="img-container">
+									<img ng-src="{{ mayor.image }}">
+								</div>
+								<div class="candidate-wrapper">
+									<div class="candidate">{{ mayor.candidate }}
+									</div>
+									<div class="party">{{ mayor.party }}
+									</div>
+								</div>
+						
+
+									<input class="choice-button" ng-value="mayor.id" type="radio" ng-model="pick.mayor" name="maySelect">
+
+								<!-- <div class="codpen">
+									<div class="container">
+										<ul>
+											<li>
+											    <input ng-value="governor.id" ng-model="pick.governor" name="govSelect" type="radio" id="f-option">
+											    <label for="f-option">Select</label>
+											    <div class="check">
+											    	<div class="inside"></div>
+											    </div>
+											</li>
+										</ul>
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>
+
+
+					<div class="race">
+						<h3>Race for Councilman</h3>
+					
+						<div class="choice-block">
+							<div class="option-box" ng-repeat="councilman in councilmen">
+								<div class="img-container">
+									<img ng-src="{{ councilman.image }}">
+								</div>
+								<div class="candidate-wrapper">
+									<div class="candidate">{{ councilman.candidate }}
+									</div>
+									<div class="party">{{ councilman.party }}
+									</div>
+								</div>
+						
+
+									<input class="choice-button" ng-value="councilman.id" type="radio" ng-model="pick.councilman" name="councSelect">
+
+								<!-- <div class="codpen">
+									<div class="container">
+										<ul>
+											<li>
+											    <input ng-value="representative.id" ng-model="pick.representative" name="repSelect" type="radio" id="f-option">
+											    <label for="f-option">Select</label>
+											    <div class="check">
+											    	<div class="inside"></div>
+											    </div>
+											</li>
+										</ul>
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>	
+
+				<br><br>
+				<div class="choice-submit">
+					<button class='lf--submit' type="submit" value="submit">Vote</button>
+				</div>
+			</form>
 	</div>
-	<form class="form" ng-submit="citySubmit(pick.mayor, pick.councilman)">
-		<div>
-			<div ng-repeat="mayor in mayors">
-				<span class="item item-checkbox">
-					<label class="checkbox">
-						<input ng-value="mayor.id" type="radio" ng-model="pick.mayor" name="maySelect">
-					</label>
-					<span>{{ mayor.candidate }}</span>
-				</span>
-			</div>
-		</div>
-
-		<div>
-			<h3>For the race of</h3>
-			<h3>COUNCILMAN</h3>
-		</div>
-		<div>
-			<div ng-repeat="councilman in councilmen">
-				<span class="item item-checkbox">
-					<label class="checkbox">
-						<input ng-value="councilman.id" type="radio" ng-model="pick.councilman" name="counSelect">
-					</label>
-					<span>{{ councilman.candidate }}</span>
-				</span>
-			</div>
-		</div>
-		<br><br>
-		<div>
-			<button type="submit" value="submit">Submit</button>
-		</div>
-	</form>
 </div>
-
+</div>

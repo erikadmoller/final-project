@@ -1,61 +1,81 @@
-<h2>Your county elections</h2>
+<div class="page">
+	<div class="ballot">
+		<header class="election-title">
+			<h1>This is your ballot</h2>
+			<h2>County</h3>
+		</header>
 
-<div>
-	<div>
-		<h3>Proposition 1</h3>
-		<h4>Vote yes or no</h4>
+			<form class="form" ng-submit="countySubmit(pick.proposition, pick.law)">
+					<div class="race">
+						<h3>Proposition 1</h3>
+					
+						<div class="choice-block">
+							<div class="yes-no-box" ng-repeat="proposition in propositions">
+								<div class="yes-no-wrapper">
+									<div class="candidate">{{ proposition.candidate }}
+									</div>
+								</div>
+						
+
+									<input class="input-choice" ng-value="proposition.id" type="radio" ng-model="pick.proposition" name="propSelect">
+
+								<!-- <div class="codpen">
+									<div class="container">
+										<ul>
+											<li>
+											    <input ng-value="governor.id" ng-model="pick.governor" name="govSelect" type="radio" id="f-option">
+											    <label for="f-option">Select</label>
+											    <div class="check">
+											    	<div class="inside"></div>
+											    </div>
+											</li>
+										</ul>
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>
+
+					<div class="race">
+						<h3>Tax Law Reform</h3>
+					
+						<div class="choice-block">
+							<div class="yes-no-box" ng-repeat="law in laws">
+								<!-- <div class="img-container">
+									<img ng-src="{{ law.image }}">
+								</div> -->
+								<div class="yes-no-wrapper">
+									<div class="candidate">{{ law.candidate }}
+									</div>
+									<div class="party">{{ law.party }}
+									</div>
+								</div>
+						
+
+									<input class="input-choice" ng-value="law.id" type="radio" ng-model="pick.law" name="lawSelect">
+
+								<!-- <div class="codpen">
+									<div class="container">
+										<ul>
+											<li>
+											    <input ng-value="representative.id" ng-model="pick.representative" name="repSelect" type="radio" id="f-option">
+											    <label for="f-option">Select</label>
+											    <div class="check">
+											    	<div class="inside"></div>
+											    </div>
+											</li>
+										</ul>
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>	
+
+				<br><br>
+				<div class="choice-submit">
+					<button class='lf--submit' type="submit" value="submit">Vote</button>
+				</div>
+			</form>
 	</div>
-	<form class="form" ng-submit="countySubmit(pick.proposition, pick.law)">
-		<div>
-			<div ng-repeat="proposition in propositions">
-				<span class="item item-checkbox">
-					<label class="checkbox">
-						<input ng-value="proposition.id" type="radio" ng-model="pick.proposition" name="propSelect">
-					</label>
-					<span>{{ proposition.candidate }}</span>
-				</span>
-			</div>
-		</div>
-
-		<div>
-			<h3>Tax Law</h3>
-			<h4>Vote yes or no</h4>
-		</div>
-		<div>
-			<div ng-repeat="law in laws">
-				<span class="item item-checkbox">
-					<label class="checkbox">
-						<input ng-value="law.id" type="radio" ng-model="pick.law" name="lawSelect">
-					</label>
-					<span>{{ law.candidate }}</span>
-				</span>
-			</div>
-		</div>
-		<br><br>
-		<div>
-		<button type="submit" value="submit">Submit</button>
-		</div>
-	</form>
-	<!-- <form class="form" ng-submit="countySubmit(propostition1Select, taxSelect)">
-		<div>
-			<select ng-model="proposition1Select">
-				<option value="yes">Yes</option>
-				<option value="no">No</option>
-			</select>
-		</div>
-
-		<div>
-			<h3>Tax Law</h3>
-			<h4>Vote yes or no</h4>
-		</div>
-		<div>
-			<select ng-model="taxSelect">
-				<option value="yes">Yes</option>
-				<option value="no">No</option>
-			</select>
-		<br><br>
-		<div>
-		<button type="submit" value="submit">Submit</button>
-		</div>
-	</form> -->
+</div>
 </div>

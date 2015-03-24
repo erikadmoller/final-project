@@ -1,102 +1,88 @@
-<header class="election-title">
-	<h2 class="title">Winner</h2>
-</header>
-<main>
+<div class="page">
+	<div class="ballot">
+		<header class="election-title">
+			<h1>Winners</h2>
+		</header>
+		<main>
+			<section class="race">
+					<h3>State</h3>
+					<div class="race-sections">
+						<div class="race-name candidate">Race for Governor</div>
 
-	<section class="container">
-		<div class="banner">
-			<h3>State</h3>
-		</div>
-		<div ng-repeat="option in options | filter: 'governor'">
-			<div class="options-wrapper">
-				<span class="candidate">
-					<span>{{ option.candidate }}</span>
-					<span>{{ option.sum + "%"}}</span>
-				</span>
-			</div>
-		</div>
+						<div class="graph" ng-repeat="option in options | filter: 'governor'">
+							<div class="person result">
+								<h4>{{ option.candidate }}</h4>
+							</div>
+							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
+								<h4>{{ option.sum + "%"}}</h4>
+							</div>
+						</div>
+				    </div>
+				    <div class="race-sections">
+						<div class="race-name candidate">Race for State Representative</div>
 
-	<!--bar chart-->
-    <h2>Bar Chart</h2>
-    <div class="chart" style="width:{{width}}px; height:{{height}}px;">
-	      <!-- Labels -->
-	     <!--  <div class="y" style="width:{{height}}px;">{{yAxis}}</div>
-	      		<div class="x">{{xAxis}}</div> -->
-	     		 <!-- Data -->
-	       		<div ng-repeat="bar in options" class="bar" style="height:{{bar.sum / max * height}}px; width:{{width / options.length - 5}}px; left:{{$index / options.length * width}}px;">
-	       		</div>
-    </div>
+						<div class="graph" ng-repeat="option in options | filter: 'representative'">
+							<div class="person result">
+								<h4>{{ option.candidate }}</h4>
+							</div>
+							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
+								<h4>{{ option.sum + "%"}}</h4>
+							</div>
+						</div>
+				    </div>
+			</section>
 
-	</section>
+			<section class="race">
+					<h3>County</h3>
+					<div class="race-sections">
+						<div class="race-name candidate">Proposition 1</div>
+						<div class="graph" ng-repeat="option in options | filter: 'proposition'">
+							<div class="person result">
+								<h4>{{ option.candidate }}</h4>
+							</div>
+							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
+								<h4>{{ option.sum + "%"}}</h4>
+							</div>
+						</div>
+				    </div>
+				    <div class="race-sections">
+						<div class="race-name candidate">Tax Law Reform</div>
+						<div class="graph" ng-repeat="option in options | filter: 'law'">
+							<div class="person result">
+								<h4>{{ option.candidate }}</h4>
+							</div>
+							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
+								<h4>{{ option.sum + "%"}}</h4>
+							</div>
+						</div>
+				    </div>
+			</section>
 
-	<section class="container">
-		<div class="banner">
-			<h3>County</h3>
-		</div>
-		<div ng-repeat="option in options | filter: 'representative'">
-			<div class="options-wrapper">
-				<span class="candidate">
-					<span>{{ option.candidate }}</span>
-					<span>{{ option.sum }}</span>
-				</span>
-			</div>
-		</div>
-	</section>
-
-	<section class="container">
-		<div class="banner">
-			<h3>County</h3>
-		</div>
-		<div ng-repeat="option in options | filter: 'proposition'">
-			<div class="options-wrapper">
-				<span class="candidate">
-					<span>{{ option.candidate }}</span>
-					<span>{{ option.sum }}</span>
-				</span>
-			</div>
-		</div>
-	</section>
-
-	<section class="container">
-		<div class="banner">
-			<h3>City</h3>
-		</div>
-		<div ng-repeat="option in options | filter: 'law'">
-			<div class="options-wrapper">
-				<span class="candidate">
-					<span>{{ option.candidate }}</span>
-					<span>{{ option.sum }}</span>
-				</span>
-			</div>
-		</div>
-	</section>
-
-	<section class="container">
-		<div class="banner">
-			<h3>County</h3>
-		</div>
-		<div ng-repeat="option in options | filter: 'mayor'">
-			<div class="options-wrapper">
-				<span class="candidate">
-					<span>{{ option.candidate }}</span>
-					<span>{{ option.sum }}</span>
-				</span>
-			</div>
-		</div>
-	</section>
-
-	<section class="container">
-		<div class="banner">
-			<h3>County</h3>
-		</div>
-		<div ng-repeat="option in options | filter: 'councilman'">
-			<div class="options-wrapper">
-				<span class="candidate">
-					<span>{{ option.candidate }}</span>
-					<span>{{ option.sum }}</span>
-				</span>
-			</div>
-		</div>
-	</section>
-
-</main>
+			<section class="race">
+					<h3>City</h3>
+					<div class="race-sections">
+						<div class="race-name candidate">Race for Mayor</div>
+						<div class="graph" ng-repeat="option in options | filter: 'mayor'">
+							<div class="person result">
+								<h4>{{ option.candidate }}</h4>
+							</div>
+							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
+								<h4>{{ option.sum + "%"}}</h4>
+							</div>
+						</div>
+				    </div>
+				    <div class="race-sections">
+						<div class="race-name candidate">Race for Councilman</div>
+						<div class="graph" ng-repeat="option in options | filter: 'councilman'">
+							<div class="person result">
+								<h4>{{ option.candidate }}</h4>
+							</div>
+							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
+								<h4>{{ option.sum + "%"}}</h4>
+							</div>
+						</div>
+				    </div>
+			</section>
+		</main>
+	</div>
+</div>

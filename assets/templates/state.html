@@ -1,4 +1,4 @@
-<span class="page">	
+<div class="page">
 	<div class="ballot">
 		<header class="election-title">
 			<h1>This is your ballot</h2>
@@ -23,14 +23,15 @@
 								</div>
 						
 
-						<!-- 			<input class="choice-button" ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect"> -->
+									<!-- <input class="choice-button" ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect"> -->
 
 								<div class="codpen">
 									<div class="container">
 										<ul>
 											<li>
-											    <input ng-value="governor.id" ng-model="pick.governor" name="govSelect" type="radio" id="f-option">
-											    <label for="f-option">Select</label>
+											    <input ng-value="governor.id" ng-model="pick.governor" name="govSelect" type="radio" id="f-option{{ governor.id }}">
+
+											    <label for="f-option{{ governor.id }}">Select</label>
 											    <div class="check">
 											    	<div class="inside"></div>
 											    </div>
@@ -59,14 +60,15 @@
 								</div>
 						
 
-						<!-- 			<input class="choice-button" ng-value="governor.id" type="radio" ng-model="pick.governor" name="govSelect"> -->
-
+									<!-- <input class="choice-button" ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">
+ -->
 								<div class="codpen">
 									<div class="container">
 										<ul>
 											<li>
-											    <input ng-value="representative.id" ng-model="pick.representative" name="repSelect" type="radio" id="f-option">
-											    <label for="f-option">Select</label>
+											    <input ng-value="representative.id" ng-model="pick.representative" name="repSelect" type="radio" id="f-option{{ representative.id }}">
+											    
+											    <label for="f-option{{ representative.id }}">Select</label>
 											    <div class="check">
 											    	<div class="inside"></div>
 											    </div>
@@ -78,24 +80,13 @@
 						</div>
 					</div>	
 
-					<!-- <div class="race">
-						<h3>Race for State Representative</h3>
-					</div>
-					<div class="choice-block">
-						<div class="option-box" ng-repeat="representative in representatives">
-							<div class="options-wrapper">
-								<span class="candidate"></span>
-								<input ng-value="representative.id" type="radio" ng-model="pick.representative" name="repSelect">
-								<span>{{ representative.candidate }}</span>
-							</div>
-						</div>
-					</div> -->
 				<br><br>
 				<div class="choice-submit">
 					<button class='lf--submit' type="submit" value="submit">Vote</button>
 				</div>
 			</form>
 	</div>
-</span>
+</div>
+</div>
 
 
