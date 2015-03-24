@@ -395,6 +395,7 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 			for(var i in options) {
 				options[i].sum = Math.floor((options[i].sum / total) * 100);
 				// console.log(options[i].sum);
+				
 				$scope.options.push(options[i]);
 			}
 			// console.log($scope.options);
