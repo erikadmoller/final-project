@@ -19,6 +19,9 @@
 			
 		</div>
 			<h2 class="confirm-error" ng-show="confirmErrorShow" ng-bind="confirmErrorMsg"></h2>
+		<div>
+			<button ng-show="confirmLogin" class='login-button' ui-sref="login">Login</button>
+		</div>
 	</form>
 	<div class="confirm-title" ng-show="textUpdate">
 		<h2>We will send you text message updates</h2>

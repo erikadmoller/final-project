@@ -158,31 +158,40 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		// console.log($scope.pick);
 		// console.log($scope.user);
 
-		// $http.get('/auth/user') {
-			
-		// }
-
-		var userGovChoice = {
-			userId: 1,
-			choice: governorChoice
-		};
-
-		var userRepChoice = {
-			userId: 1,
-			choice: representativeChoice
-		};
-
-		$http.post('/votes', userGovChoice)
+		$http.get('/auth/user')
 			.success(function(response) {
-				console.log(response);
-			});
+				// console.log(response);
+				$scope.user = response;
 
-		$http.post('/votes', userRepChoice)
-			.success(function(response) {
-				console.log(response);
-			});
+			var userGovChoice = {
+				userId: $scope.user.id,
+				choice: governorChoice
+			};
 
-		$state.go('elections');	
+			var userRepChoice = {
+				userId: $scope.user.id,
+				choice: representativeChoice
+			};
+
+			$http.post('/votes', userGovChoice)
+				.success(function(response) {
+					console.log(response);
+				});
+
+			$http.post('/votes', userRepChoice)
+				.success(function(response) {
+					console.log(response);
+				});
+
+			$state.go('elections');	
+
+			})
+
+			.error(function(err) {
+				console.log('Error!');
+				console.log(err);
+				$state.go('login');
+			});
 	};
 
 })
@@ -214,27 +223,40 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		// console.log($scope.pick);
 		// console.log($scope.user);
 
-		var userPropChoice = {
-			userId: 1,
-			choice: propositionChoice
-		};
-
-		var userLawChoice = {
-			userId: 1,
-			choice: lawChoice
-		};
-
-		$http.post('/votes', userPropChoice)
+		$http.get('/auth/user')
 			.success(function(response) {
-				console.log(response);
-			});
+				// console.log(response);
+				$scope.user = response;
 
-		$http.post('/votes', userLawChoice)
-			.success(function(response) {
-				console.log(response);
-			});
+				var userPropChoice = {
+					userId: $scope.user.id,
+					choice: propositionChoice
+				};
 
-		$state.go('elections');	
+				var userLawChoice = {
+					userId: $scope.user.id,
+					choice: lawChoice
+				};
+
+				$http.post('/votes', userPropChoice)
+					.success(function(response) {
+						console.log(response);
+					});
+
+				$http.post('/votes', userLawChoice)
+					.success(function(response) {
+						console.log(response);
+					});
+
+				$state.go('elections');	
+
+			})
+
+			.error(function(err) {
+				console.log('Error!');
+				console.log(err);
+				$state.go('login');
+			});
 	};
 
 })
@@ -266,28 +288,40 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		// console.log($scope.pick);
 		// console.log($scope.user);
 
-		var userMayChoice = {
-			userId: 1, 
-			// user.id
-			choice: mayorChoice
-		};
-
-		var userCounChoice = {
-			userId: 1,
-			choice: councilmanChoice
-		};
-
-		$http.post('/votes', userMayChoice)
+		$http.get('/auth/user')
 			.success(function(response) {
-				console.log(response);
-			});
+				// console.log(response);
+				$scope.user = response;
 
-		$http.post('/votes', userCounChoice)
-			.success(function(response) {
-				console.log(response);
-			});
+				var userMayChoice = {
+					userId: $scope.user.id, 
+					// user.id
+					choice: mayorChoice
+				};
 
-		$state.go('elections');	
+				var userCounChoice = {
+					userId: $scope.user.id,
+					choice: councilmanChoice
+				};
+
+				$http.post('/votes', userMayChoice)
+					.success(function(response) {
+						console.log(response);
+					});
+
+				$http.post('/votes', userCounChoice)
+					.success(function(response) {
+						console.log(response);
+					});
+
+				$state.go('elections');	
+			})
+
+			.error(function(err) {
+				console.log('Error!');
+				console.log(err);
+				$state.go('login');
+			});
 	};
 
 })
@@ -295,6 +329,7 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 
 	$scope.textUpdate = false;
 	$scope.confirmErrorShow = false;
+	$scope.confirmLogin = false;
 
 	$scope.confirmSubmit = function(textConfirm) {
 		console.log(textConfirm);
@@ -306,10 +341,17 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		}
 
 		if(textConfirm === 'yes') {
-			$scope.textUpdate = true;
+			// $scope.textUpdate = true;
 			$http.post('/message/send')
 				.success(function(response) {
 					console.log(response);
+
+					if(response.error === 'user not logged in') {
+						$scope.confirmLogin = true;
+					} 
+					else{
+						$scope.textUpdate = true;
+					}
 				})
 		}
 		else if(textConfirm === 'no') {
