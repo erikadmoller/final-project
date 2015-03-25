@@ -18,7 +18,7 @@ module.exports = {
 		}
 		else { 
 			client.messages.create({
-			    body: "Click to see the races https://powerful-river-4602.herokuapp.com/#/winner",
+			    body: "Watch the races https://speak-out.herokuapp.com/#/winner",
 			    to: req.user.phone,
 			    from: "+13143120866"
 			}, function(err, message) {
