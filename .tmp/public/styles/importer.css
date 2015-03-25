@@ -194,7 +194,8 @@ p {
     font-size: 1.5em; }
   .election-title h2 {
     font-weight: 400;
-    font-size: 1em; }
+    font-size: 1em;
+    margin-top: 1em; }
   .election-title h1, .election-title h2 {
     margin: 0;
     font-family: "Noto Sans", sans-serif;
@@ -325,7 +326,7 @@ ul li label {
   font-weight: 400;
   font-size: 0.6em;
   text-transform: uppercase;
-  padding: 2px 3px 10px 30px;
+  padding: 3px 3px 10px 30px;
   margin: 0;
   height: 10px;
   z-index: 9;
