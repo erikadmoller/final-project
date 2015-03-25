@@ -94,3 +94,48 @@ $dark: #5E5E5E;
     background:lighten($dark , 30% );
   }
 }
+
+@media (max-width: 640px) {
+
+  .race-sections {
+  margin: 1em 0;
+  }
+   
+  .graph {
+    height: 100%;
+    padding: 0.1em 1em 0.1em 1em;
+    // position: relative;
+    width: 10em;
+  }
+
+// .results-wrapper {
+//   width: 100%;
+//   display: inline-block;
+// }
+
+.person {
+  width: 12em;
+  height: 2.1em;
+  background: #eee;
+  // float: left;
+  // position: relative;
+  // z-index: 1;
+}
+
+.bar-graph {
+  height: 2.1em;
+  background: #E74C3C;
+  overflow: hidden;
+  font-size: 0.7em;
+  text-align: right;
+  font-family: $serif;
+  font-weight: 400;
+  color: white;
+  // padding-left: 210px;
+  // box-sizing: border-box;
+  // position: absolute;
+  // height: 36px;
+
+}
+
+}

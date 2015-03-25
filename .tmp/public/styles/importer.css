@@ -441,6 +441,29 @@ input[type=radio]:checked ~ label {
   .bar:nth-of-type(even) {
     background: #ababab; }
 
+@media (max-width: 640px) {
+  .race-sections {
+    margin: 1em 0; }
+
+  .graph {
+    height: 100%;
+    padding: 0.1em 1em 0.1em 1em;
+    width: 10em; }
+
+  .person {
+    width: 12em;
+    height: 2.1em;
+    background: #eee; }
+
+  .bar-graph {
+    height: 2.1em;
+    background: #E74C3C;
+    overflow: hidden;
+    font-size: 0.7em;
+    text-align: right;
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
+    color: white; } }
 .confirm-title {
   margin: 2em; }
 

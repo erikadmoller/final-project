@@ -18,7 +18,7 @@ module.exports = {
 		}
 		else { 
 			client.messages.create({
-			    body: "You will receive live election updates",
+			    body: "Click to see the races https://powerful-river-4602.herokuapp.com/#/winner",
 			    to: req.user.phone,
 			    from: "+13143120866"
 			}, function(err, message) {
