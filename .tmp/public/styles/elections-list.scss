@@ -4,14 +4,20 @@ p {
 }
 
 .select-button {
+  cursor: pointer;
   width: 100%;
   padding: 1em;
   margin-top: 0.2em;
-  background: linear-gradient(to right, #FFFFFF, #FFFFFF, #BABFD4);
-  border: 0;
+  background: #FFFFFF;
+  border: 2px $green-dark solid;
   color: #fff;
   cursor: pointer;
   font-size: .75em;
   font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+    &:focus {
+    outline: none;
+    transition: transform .15s ease;
+    transform: scale(1.1);
+  }
 }

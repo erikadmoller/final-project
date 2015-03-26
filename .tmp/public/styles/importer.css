@@ -71,16 +71,26 @@ body {
   color: #fff;
   text-align: center; }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 650px) {
   .login-form {
-    padding: 0;
-    background: transparent; }
+    width: 60%; }
 
   .wrapper h1 {
-    font-size: 5em; }
+    font-size: 3em;
+    margin: 0 auto; }
 
   .wrapper h2 {
-    font-size: 1em; } }
+    font-size: 1em;
+    margin: 0 auto; }
+
+  .flex-row {
+    margin: 0 0 1em 0; }
+
+  .dropdown-backgd {
+    display: none; }
+
+  .dropdown {
+    display: none; } }
 .flex-row {
   display: flex;
   margin-bottom: 1em; }
@@ -106,11 +116,13 @@ body {
     transform: scale(1.1); }
 
 .dropdown-backgd {
-  background-color: white; }
+  background-color: white;
+  display: inline-block; }
 
 .dropdown {
   height: 3em;
-  background-color: white; }
+  background-color: white;
+  display: inline-block; }
 
 .lf--submit {
   display: block;
@@ -158,16 +170,21 @@ p {
   color: #34495E; }
 
 .select-button {
+  cursor: pointer;
   width: 100%;
   padding: 1em;
   margin-top: 0.2em;
-  background: linear-gradient(to right, #FFFFFF, #FFFFFF, #BABFD4);
-  border: 0;
+  background: #FFFFFF;
+  border: 2px #35c3c1 solid;
   color: #fff;
   cursor: pointer;
   font-size: .75em;
   font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+  border-radius: 5px; }
+  .select-button:focus {
+    outline: none;
+    transition: transform .15s ease;
+    transform: scale(1.1); }
 
 .page {
   text-align: center;
@@ -433,13 +450,6 @@ input[type=radio]:checked ~ label {
   font-style: italic;
   padding: 1em;
   margin-bottom: 2em; }
-
-.bar {
-  background: #5E5E5E;
-  display: inline-block;
-  margin: 0 0.1em; }
-  .bar:nth-of-type(even) {
-    background: #ababab; }
 
 @media (max-width: 640px) {
   .race-sections {
