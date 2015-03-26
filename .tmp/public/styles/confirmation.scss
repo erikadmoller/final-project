@@ -45,6 +45,17 @@
 		}
 }
 
+.dropdown-backgd-confirm {
+    background-color: white;
+    display: inline-block;
+}
+
+.dropdown-confirm {
+    height: 3em;
+    background-color: white;
+    display: inline-block;	
+}
+
 .button-confirm {
 	padding: 1em;
 	width: 100%;
@@ -74,4 +85,47 @@
 	color: #fff;
 	font-size: 1em;
 	text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+	.confirm-title {
+		margin: 0;
+	}
+
+	.confirm-title	h1 {
+		font-size: 2em;
+		margin: 1em 0 0 0;
+		color: #35c3c1;
+		text-align: center;
+	}
+
+	.confirm-title	h2 {
+		margin: 2em 0;
+		padding-top: 1em;
+		color: #fff;
+		font-size: 1em;
+		text-align: center;
+	}
+
+	.confirm-form {
+	  width: 60%;
+	  // padding: 2em;
+	  // position: relative;
+	  // background: rgba(0, 0, 0, 0.15);
+	  // display: flex;
+	  // justify-content: center;
+	  // flex-direction: column;
+	  // position: relative;
+	  // margin: 0 auto;
+	}
+
+	.dropdown-backgd-confirm {
+		display: none;
+	}
+
+	.dropdown-confirm {
+		display: none;
+	}
+
+
 }
