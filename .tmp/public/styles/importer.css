@@ -84,12 +84,23 @@ body {
     margin: 0 auto; }
 
   .flex-row {
-    margin: 0 0 1em 0; }
+    margin: 0.5em auto;
+    width: 100%; }
+
+  .lf--label {
+    display: none;
+    width: 0; }
+
+  .lf--input {
+    width: 100%; }
 
   .dropdown-backgd {
     display: none; }
 
   .dropdown {
+    display: none; }
+
+  .icon {
     display: none; } }
 .flex-row {
   display: flex;
