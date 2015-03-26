@@ -108,9 +108,9 @@ body {
     width: 100%;
   }
 
-  .lf--label {
+  label {
     display: none;
-    width: 0;
+    // width: 0;
   }
 
   .lf--input {
@@ -223,8 +223,4 @@ body {
 .error {
   color: white;
   margin-top: 1em;
-}
-
-@media screen and (max-width: 650px) {
-
 }

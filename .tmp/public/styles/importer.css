@@ -87,9 +87,8 @@ body {
     margin: 0.5em auto;
     width: 100%; }
 
-  .lf--label {
-    display: none;
-    width: 0; }
+  label {
+    display: none; }
 
   .lf--input {
     width: 100%; }
