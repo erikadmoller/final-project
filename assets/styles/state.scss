@@ -49,15 +49,11 @@ $dark: #34495E;
 
 .race {
 	border: 1px solid #ECF0F1;
-	// padding: 1em;
 	margin-bottom: 2em;
 	
-	// width: 40%;
 	h3 {
 		margin: 0 auto;
-		// padding: 0;
 		background-color: #ECF0F1;
-		// display: block;
 		padding: 0.5em 2em;
 		background: linear-gradient(
 	    135deg,
@@ -70,12 +66,6 @@ $dark: #34495E;
 	}
 }
 
-.choice-block {
-	// width: 95%;
-	// margin: 0 auto;
-	// margin-bottom: 1em;
-}
-
 .option-box {
 	display: inline-block;
 	background-color: #ECF0F1;
@@ -86,10 +76,10 @@ $dark: #34495E;
 	vertical-align: top;
 }
 
-@media (max-width: 730px) {
+@media screen (max-width: 730px) {
 	.option-box {
-		min-width: 250px;
-		margin: 9.6px;
+		// min-width: 250px;
+		// margin: 9.6px;
 		padding: 7.2px;
 	}
 
@@ -110,35 +100,6 @@ $dark: #34495E;
 
 }
 
-// @media (max-width: 830px) {
-// 	.option-box {
-// 		width: 75%;
-// 		margin: 0.4em;
-// 	}
-
-// 	.codpen {
-// 	width: 3em;
-// 	// height: 2em;
-// 	float: left;
-// 	// margin-top: 0.3em;
-// 	display: inline-block;
-// 	}
-// }
-
-// .options-wrapper {
-// 	width: 10em;
-// 	height: 2em;
-// 	background-color: white;
-// 	margin: 1.5em 1em 1em 1em;
-// 	padding: 1em;
-// 	border-radius: 5px;
-// }
-
-// .choice-submit {
-// 	width: 8em;
-// 	margin: 0 auto;
-// }
-
 .img-container {
     height: 4em;
     width: 4em;
@@ -157,13 +118,6 @@ img {
     // max-height: 100%;
     background-color: white;
 }
-
-// .line {
-// 	background-color: red;
-// 	width: 5em;
-// 	height: 0.5;
-// 	margin: 0.5em;
-// }
 
 .candidate-wrapper {
 	width: 7.8em;
@@ -192,12 +146,6 @@ img {
 	font-style: italic;
 	color: #2E2E2E;
 }
-
-// .choice-button {
-// 	width: 5em;
-// 	height: 2em;
-// 	background-color: red;
-// }
 
 .choice-submit {
 	width: 10em;
@@ -298,4 +246,16 @@ input[type=radio]:checked ~ .check .inside{
 
 input[type=radio]:checked ~ label{
   color: #0DFF92;
+}
+
+    
+@media screen and (max-width: 650px) {
+
+  .race {
+    
+    h3 {
+      padding: 0.5em;
+      font-size: 1em;
+    }
+  }
 }

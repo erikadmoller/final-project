@@ -1,548 +1,73 @@
-/**
- * importer.less
- *
- * By default, new Sails projects are configured to compile this file
- * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
- * included automatically unless they are imported below.
- *
- * The LESS files imported below are compiled and included in the order
- * they are listed.  Mixins, variables, etc. should be imported first
- * so that they can be accessed by subsequent LESS stylesheets.
- *
- * (Just like the rest of the asset pipeline bundled in Sails, you can
- * always omit, customize, or replace this behavior with SASS, SCSS,
- * or any other Grunt tasks you like.)
- */
-* {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility; }
-
-html {
-  min-height: 100%; }
-
-body {
-  min-height: 100%;
-  background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
-  font-family: 'Roboto', helvetica, arial, sans-serif;
-  font-size: 1.5em;
-  margin-bottom: 2em; }
-  body:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-image: url(data:image/png;base64,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);
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: .3; }
-
-.login-form {
-  width: 15em;
-  padding: 2em;
-  position: relative;
-  background: rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  margin: 0 auto; }
-  .login-form:before {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(to right, #35c3c1, #00d6b7); }
-
-.wrapper {
-  margin: 0 auto;
-  padding: 2em 0; }
-
-.wrapper h1 {
-  font-size: 6em;
-  margin: 0;
-  color: #35c3c1;
-  text-align: center; }
-
-.wrapper h2 {
-  margin: 0;
-  padding-top: 1em;
-  color: #fff;
-  text-align: center; }
-
-@media screen and (max-width: 650px) {
-  .login-form {
-    width: 60%; }
-
-  .wrapper h1 {
-    font-size: 3em;
-    margin: 0 auto; }
-
-  .wrapper h2 {
-    font-size: 1em;
-    margin: 0 auto; }
-
-  .flex-row {
-    margin: 0.5em auto;
-    width: 100%; }
-
-  label {
-    display: none; }
-
-  .lf--input {
-    width: 100%; }
-
-  .dropdown-backgd {
-    display: none; }
-
-  .dropdown {
-    display: none; }
-
-  .icon {
-    display: none; } }
-.flex-row {
-  display: flex;
-  margin-bottom: 1em; }
-
-.lf--label {
-  width: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f5f6f8;
-  cursor: pointer; }
-
-.lf--input {
-  flex: 1;
-  padding: 1em;
-  border: 0;
-  color: #8f8f8f;
-  font-size: 1rem;
-  background-color: white; }
-  .lf--input:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1); }
-
-.dropdown-backgd {
-  background-color: white;
-  display: inline-block; }
-
-.dropdown {
-  height: 3em;
-  background-color: white;
-  display: inline-block; }
-
-.lf--submit {
-  display: block;
-  padding: 1em;
-  width: 100%;
-  background: linear-gradient(to right, #35c3c1, #00d6b7);
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-size: .75em;
-  font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
-  .lf--submit:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1); }
-
-.lf--forgot {
-  margin-top: 1em;
-  color: #00d6b7;
-  font-size: .65em;
-  text-align: center; }
-
-::placeholder {
-  color: #8f8f8f; }
-
-.login-button {
-  width: 100%;
-  padding: 1em;
-  margin: 3em 0 0 0;
-  background: linear-gradient(to right, #e74c3c, #ed7669);
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-size: .75em;
-  font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
-
-.error {
-  color: white;
-  margin-top: 1em; }
-
-p {
-  margin: 0;
-  color: #34495E; }
-
-.select-button {
-  cursor: pointer;
-  width: 100%;
-  padding: 1em;
-  margin-top: 0.2em;
-  background: #FFFFFF;
-  border: 2px #35c3c1 solid;
-  color: #fff;
-  cursor: pointer;
-  font-size: .75em;
-  font-weight: 600;
-  border-radius: 5px; }
-  .select-button:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1); }
-
-.page {
-  text-align: center;
-  background: #ECF0F1;
-  padding: 0;
-  margin: 0; }
-
-.ballot {
-  display: block;
-  max-width: 800px;
-  background: #fff;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: left;
-  position: relative; }
-
-.election-title {
-  text-align: center;
-  border-bottom: 1px solid #ECF0F1;
-  margin-bottom: 2rem;
-  padding-bottom: 1.4rem; }
-  .election-title h1 {
-    font-weight: 700;
-    font-size: 1.5em; }
-  .election-title h2 {
-    font-weight: 400;
-    font-size: 1em;
-    margin-top: 1em; }
-  .election-title h1, .election-title h2 {
-    margin: 0;
-    font-family: "Noto Sans", sans-serif;
-    color: #34495E; }
-
-.race {
-  border: 1px solid #ECF0F1;
-  margin-bottom: 2em; }
-  .race h3 {
-    margin: 0 auto;
-    background-color: #ECF0F1;
-    padding: 0.5em 2em;
-    background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
-    color: white;
-    font-family: "Noto Serif", serif;
-    font-weight: 400; }
-
-.option-box {
-  display: inline-block;
-  background-color: #ECF0F1;
-  margin: 0.5em;
-  width: 44.5%;
-  border-radius: 3px;
-  padding: 0.3em;
-  vertical-align: top; }
-
-@media (max-width: 730px) {
-  .option-box {
-    min-width: 250px;
-    margin: 9.6px;
-    padding: 7.2px; }
-
-  .codpen {
-    width: 3em;
-    float: left;
-    position: absolute;
-    margin-left: 4.5em; }
-
-  .candidate-wrapper {
-    width: 98%;
-    float: left;
-    height: 3.5em;
-    margin: 0.6em 0 0.6em 0.6em;
-    border-bottom: 1.8px solid #ECF0F1; } }
-.img-container {
-  height: 4em;
-  width: 4em;
-  overflow: hidden;
-  margin: 0 auto;
-  float: left;
-  border-radius: 3px;
-  border: 1px solid #ccc; }
-
-img {
-  max-width: 100%;
-  background-color: white; }
-
-.candidate-wrapper {
-  width: 7.8em;
-  float: left;
-  height: 3.5em;
-  margin: 0.6em 0 0.6em 0.6em;
-  border-bottom: 1.8px solid #ECF0F1; }
-
-.candidate {
-  font-size: 0.7em;
-  text-align: left;
-  font-family: "Noto Serif", serif;
-  font-weight: 400;
-  color: #2E2E2E; }
-
-.party {
-  text-align: left;
-  font-size: 0.6em;
-  margin: 0.5em 0;
-  font-family: "Noto Serif", serif;
-  font-weight: 400;
-  font-style: italic;
-  color: #2E2E2E; }
-
-.choice-submit {
-  width: 10em;
-  margin: 0 auto; }
-
-.codpen {
-  width: 6em;
-  height: 2em;
-  float: left;
-  margin-top: 0.3em; }
-
-.container {
-  display: inline-block;
-  position: relative;
-  margin: 0;
-  height: 21px;
-  width: 90px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  padding: 0;
-  background-color: grey; }
-
-.container ul {
-  list-style: none;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0; }
-
-ul li {
-  color: #FFF;
-  display: block;
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 23.333%; }
-
-ul li input[type=radio] {
-  position: absolute;
-  top: -9999px;
-  display: none; }
-
-ul li label {
-  display: block;
-  position: relative;
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 0.6em;
-  text-transform: uppercase;
-  padding: 2px 3px 10px 30px;
-  margin: 0;
-  height: 10px;
-  z-index: 9;
-  background: rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  -webkit-transition: all 0.45s linear; }
-
-ul li label:hover {
-  background: rgba(255, 255, 255, 0.45); }
-
-ul li .check {
-  display: block;
-  position: absolute;
-  border: 2px solid #FFF;
-  border-radius: 100%;
-  height: 10px;
-  width: 10px;
-  top: 30%;
-  left: 7%;
-  margin-top: 1.5px; }
-
-input[type=radio]:checked ~ .check {
-  border: 3px solid #0DFF92; }
-
-input[type=radio]:checked ~ .check .inside {
-  display: block;
-  position: relative;
-  background: #0DFF92;
-  border-radius: 100%;
-  height: 60%;
-  width: 60%;
-  top: 21%;
-  margin: auto; }
-
-input[type=radio]:checked ~ label {
-  color: #0DFF92; }
-
-.yes-no-wrapper {
-  width: 2em;
-  float: left;
-  height: 1em;
-  border-bottom: 1.8px solid #ECF0F1; }
-
-.yes-no-box {
-  display: inline-block;
-  background-color: #ECF0F1;
-  margin: 0.5em;
-  width: 4em;
-  border-radius: 3px;
-  padding: 0.3em;
-  vertical-align: top; }
-
-.sm-ballot-box {
-  width: 6em;
-  /* height: 2em; */
-  float: left;
-  margin-top: 0.3em; }
-
-.graph {
-  height: 1.5em;
-  padding: 0.1em 1em; }
-
-.person {
-  width: 12em;
-  height: 100%;
-  background: #eee;
-  float: left; }
-
-.bar-graph {
-  height: 2.1em;
-  background: #E74C3C;
-  overflow: hidden;
-  font-size: 0.7em;
-  text-align: right;
-  font-family: "Noto Serif", serif;
-  font-weight: 400;
-  color: white; }
-
-.result {
-  font-size: 0.7em;
-  text-align: left;
-  font-family: "Noto Serif", serif;
-  font-weight: 400;
-  color: #2E2E2E;
-  padding-left: 0.5em; }
-  .result h4 {
-    margin: 0.5em; }
-
-.stat {
-  padding-right: 0.5em; }
-  .stat h4 {
-    margin: 0.5em; }
-
-.race-sections {
-  margin: 1em 0; }
-
-.race-name {
-  background: #ECF0F1;
-  text-align: left;
-  font-family: "Noto Serif", serif;
-  font-weight: 700;
-  color: #2E2E2E;
-  font-size: 0.8em;
-  font-style: italic;
-  padding: 1em;
-  margin-bottom: 2em; }
-
-@media (max-width: 640px) {
-  .race-sections {
-    margin: 1em 0; }
-
-  .graph {
-    height: 100%;
-    padding: 0.1em 1em 0.1em 1em;
-    width: 10em; }
-
-  .person {
-    width: 12em;
-    height: 2.1em;
-    background: #eee; }
-
-  .bar-graph {
-    height: 2.1em;
-    background: #E74C3C;
-    overflow: hidden;
-    font-size: 0.7em;
-    text-align: right;
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    color: white; } }
-.confirm-title {
-  margin: 2em; }
-
-.confirm-title h1 {
-  font-size: 4em;
-  margin: 1em 0 0 0;
-  color: #35c3c1;
-  text-align: center; }
-
-.confirm-title h2 {
-  margin: 2em 0 0 0;
-  padding-top: 1em;
-  color: #fff;
-  font-size: 1em;
-  text-align: center; }
-
-.confirm-form {
-  width: 13em;
-  padding: 2em;
-  position: relative;
-  background: rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  margin: 0 auto; }
-
-.input-confirm {
-  flex: 1;
-  padding: 1em;
-  border: 0;
-  color: #8f8f8f;
-  font-size: 1rem;
-  background-color: white;
-  width: 8em; }
-  .input-confirm:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1); }
-
-.button-confirm {
-  padding: 1em;
-  width: 100%;
-  margin-left: 1em;
-  background: linear-gradient(to right, #35c3c1, #00d6b7);
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-size: .75em;
-  font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
-  .button-confirm:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1); }
-
-.confirm-error {
-  color: #fff;
-  font-size: 1em;
-  text-align: center; }
-
-/*# sourceMappingURL=importer.css.map */
+/*
+Error: Invalid CSS after "@media screen ": expected "{", was "(max-width: 730..."
+        on line 79 of assets/styles/state.scss
+        from line 34 of assets/styles/importer.scss
+
+74: 	border-radius: 3px;
+75: 	padding: 0.3em;
+76: 	vertical-align: top;
+77: }
+78: 
+79: @media screen (max-width: 730px) {
+80: 	.option-box {
+81: 		// min-width: 250px;
+82: 		// margin: 9.6px;
+83: 		padding: 7.2px;
+84: 	}
+
+Backtrace:
+assets/styles/state.scss:79
+assets/styles/importer.scss:34
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:1165:in `expected'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:1101:in `expected'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:1096:in `tok!'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:641:in `block'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:401:in `media_directive'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:219:in `special_directive'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:194:in `directive'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:660:in `block_child'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:653:in `block_contents'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/scss/parser.rb:42:in `parse'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/engine.rb:393:in `_to_tree'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/engine.rb:299:in `to_tree'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/stack.rb:88:in `block in with_import'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/stack.rb:115:in `with_frame'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/stack.rb:88:in `with_import'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `block in with_base'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/stack.rb:115:in `with_frame'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/stack.rb:79:in `with_base'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/exec/sass_scss.rb:407:in `run'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/exec/base.rb:52:in `parse'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/lib/sass/exec/base.rb:19:in `parse!'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/gems/sass-3.4.12/bin/sass:13:in `<top (required)>'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/bin/sass:23:in `load'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/bin/sass:23:in `<main>'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/erikamoller/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"@media screen \": expected \"{\", was \"(max-width: 730...\"\A         on line 79 of assets/styles/state.scss\A         from line 34 of assets/styles/importer.scss\A \A 74: 	border-radius: 3px;\A 75: 	padding: 0.3em;\A 76: 	vertical-align: top;\A 77: }\A 78: \A 79: @media screen (max-width: 730px) {\A 80: 	.option-box {\A 81: 		// min-width: 250px;\A 82: 		// margin: 9.6px;\A 83: 		padding: 7.2px;\A 84: 	}"; }
