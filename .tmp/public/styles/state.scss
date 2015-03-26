@@ -76,9 +76,9 @@ $dark: #34495E;
 	vertical-align: top;
 }
 
-@media (max-width: 730px) {
+@media screen and (max-width: 730px) {
 	.option-box {
-		min-width: 250px;
+		min-width: 200px;
 		margin: 9.6px;
 		padding: 7.2px;
 	}
