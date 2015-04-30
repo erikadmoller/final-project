@@ -10,11 +10,11 @@ If casting your vote was an online experience, what would that look like? In thi
 
 
 <h3>Data Models</h3>
-| <h4>User</h4> |  |  |  |
+| <h4>User</h4> |  |  |  |  |  |
 | --------- | -------- | -------- | -------- |
-| userId: | number | unique | true |
 | username: | string | unique: | true |
-| email: | string | required: | true unqiue: | true |
+| email: | email | required: | true | unqiue: | true |
+| passports: | collection: | Passport | via: | user |
 | street: | string | required: | true |
 | apt: | string | required: | no |
 | city: | string | required: | true |
@@ -24,25 +24,32 @@ If casting your vote was an online experience, what would that look like? In thi
 | name: | string | required: | true | unique: | true |
 | ssn: | string | required: | true | unqiue: | true |
 
-<h4>Votes</h4>
-<div>
-votes: { <br>
-	id: number<br>
-	type: (governor, representative, proposition1, tax, mayor, councilman)<br>
-	choice: string<br>
-	year: string<br>
-	userId: string<br>
-}
-</div>
+| <h4>Votes</h4> |  |  |  |
+| id: | number |
+| choice: | model: | Options |
+| userId: | integer | unqiue | false |
 
-<h4>Voting Options</h4>
-<div>
-options: { <br>
-	id: number<br>
-	type: (governor, representative, proposition1, tax, mayor, councilman)<br>
-	year: string<br>
-}
-</div>
+| <h4>Profile</h4> |  |  |  |  |
+| --------- | -------- | -------- | -------- |
+| userId: | integer | unique: | true |
+| email: | email | required: | true | unqiue: | true |
+| street: | string | required: | true |
+| apt: | string | required: | no |
+| city: | string | required: | true |
+| state: | string | required: | true |
+| zipcode: | integer | required: | true |
+| phone: | integer | required: | true |
+| name: | string | required: | true |
+| ssn: | integer | required: | true | unqiue: | true |
+| textConfirm: | type: | string | required: | false |
+
+<h4>Options</h4>
+| -------- | ------- |
+| race: | string | required: | true |
+| candidate: | string | required: | true |
+| year: | integer | required: | true |
+| image: | string | required: | false |
+| party: | string | required: | false |
 
 <h3>Page Sketches</h3>
 
@@ -56,5 +63,7 @@ options: { <br>
 <ul>
 	<li>AngularJS</li>
 	<li>Sails</li>
+	<li>Underscore</li>
+	<li>Twilio</li>
 </ul>
 
