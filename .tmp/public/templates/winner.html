@@ -1,88 +1,86 @@
-<div class="page">
-	<div class="ballot">
-		<header class="election-title">
-			<h1>Winners</h2>
-		</header>
-		<main>
-			<section class="race">
-					<h3>State</h3>
-					<div class="race-sections">
-						<div class="race-name candidate">Race for Governor</div>
-
-						<div class="graph" ng-repeat="option in options | filter: 'governor'">
-							<div class="person result">
-								<h4>{{ option.candidate }}</h4>
-							</div>
-							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
-								<h4>{{ option.sum + "%"}}</h4>
-							</div>
-						</div>
-				    </div>
-				    <div class="race-sections">
-						<div class="race-name candidate">Race for State Representative</div>
-
-						<div class="graph" ng-repeat="option in options | filter: 'representative'">
-							<div class="person result">
-								<h4>{{ option.candidate }}</h4>
-							</div>
-							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
-								<h4>{{ option.sum + "%"}}</h4>
-							</div>
-						</div>
-				    </div>
-			</section>
-
-			<section class="race">
-					<h3>County</h3>
-					<div class="race-sections">
-						<div class="race-name candidate">Proposition 1</div>
-						<div class="graph" ng-repeat="option in options | filter: 'proposition'">
-							<div class="person result">
-								<h4>{{ option.candidate }}</h4>
-							</div>
-							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
-								<h4>{{ option.sum + "%"}}</h4>
-							</div>
-						</div>
-				    </div>
-				    <div class="race-sections">
-						<div class="race-name candidate">Tax Law Reform</div>
-						<div class="graph" ng-repeat="option in options | filter: 'law'">
-							<div class="person result">
-								<h4>{{ option.candidate }}</h4>
-							</div>
-							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
-								<h4>{{ option.sum + "%"}}</h4>
-							</div>
-						</div>
-				    </div>
-			</section>
-
-			<section class="race">
-					<h3>City</h3>
-					<div class="race-sections">
-						<div class="race-name candidate">Race for Mayor</div>
-						<div class="graph" ng-repeat="option in options | filter: 'mayor'">
-							<div class="person result">
-								<h4>{{ option.candidate }}</h4>
-							</div>
-							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
-								<h4>{{ option.sum + "%"}}</h4>
-							</div>
-						</div>
-				    </div>
-				    <div class="race-sections">
-						<div class="race-name candidate">Race for Councilman</div>
-						<div class="graph" ng-repeat="option in options | filter: 'councilman'">
-							<div class="person result">
-								<h4>{{ option.candidate }}</h4>
-							</div>
-							<div class="bar-graph stat" ng-attr-style="width:{{option.sum}}%">
-								<h4>{{ option.sum + "%"}}</h4>
-							</div>
-						</div>
-				    </div>
-			</section>
-		</main>
-	</div>
+<div class="grey-backgd">
+  <div class="ballot">
+    <header class="election-title">
+	  <hgroup>
+		<h1>Winners</h2>
+	  </hgroup>
+    </header>
+	<main>
+	  <section class="race">
+		<h3>State</h3>
+		<div class="race-section">
+		  <div class="race-name">Race for Governor</div>
+		  <div class="graph" ng-repeat="option in options | filter: 'governor'">
+		    <div class="result">
+			  <p>{{ option.candidate }}</p>
+			</div>
+			<div class="bar-graph" ng-attr-style="width:{{option.sum}}%">
+			  <p>{{ option.sum + "%"}}</p>
+			</div>
+		  </div>
+	    </div>
+	    <div class="race-section">
+		  <div class="race-name">Race for State Representative</div>
+		    <div class="graph" ng-repeat="option in options | filter: 'representative'">
+			  <div class="result">
+				<p>{{ option.candidate }}</p>
+			  </div>
+			  <div class="bar-graph" ng-attr-style="width:{{option.sum}}%">
+				<p>{{ option.sum + "%"}}</p>
+			  </div>
+		  </div>
+	    </div>
+	  </section>
+	  <section class="race">
+		<h3>County</h3>
+		<div class="race-section">
+		  <div class="race-name">Proposition 1</div>
+		  <div class="graph" ng-repeat="option in options | filter: 'proposition'">
+			<div class="result">
+			  <p>{{ option.candidate }}</p>
+			</div>
+			<div class="bar-graph" ng-attr-style="width:{{option.sum}}%">
+			  <p>{{ option.sum + "%"}}</p>
+			</div>
+		  </div>
+	    </div>
+	    <div class="race-section">
+		  <div class="race-name">Tax Law Reform</div>
+		  <div class="graph" ng-repeat="option in options | filter: 'law'">
+			<div class="result">
+			  <p>{{ option.candidate }}</p>
+			</div>
+			<div class="bar-graph" ng-attr-style="width:{{option.sum}}%">
+			  <p>{{ option.sum + "%"}}</p>
+			</div>
+		  </div>
+	    </div>
+	  </section>
+	  <section class="race">
+		<h3>City</h3>
+		<div class="race-section">
+		  <div class="race-name">Race for Mayor</div>
+		  <div class="graph" ng-repeat="option in options | filter: 'mayor'">
+			<div class="result">
+			  <p>{{ option.candidate }}</p>
+			</div>
+			<div class="bar-graph" ng-attr-style="width:{{option.sum}}%">
+			  <p>{{ option.sum + "%"}}</p>
+			</div>
+		  </div>
+	    </div>
+	    <div class="race-section">
+		  <div class="race-name">Race for Councilman</div>
+		  <div class="graph" ng-repeat="option in options | filter: 'councilman'">
+		    <div class="result">
+			  <p>{{ option.candidate }}</p>
+		    </div>
+		    <div class="bar-graph" ng-attr-style="width:{{option.sum}}%">
+			  <p>{{ option.sum + "%"}}</p>
+		    </div>
+		  </div>
+	    </div>
+	  </section>
+	</main>
+  </div>
 </div>

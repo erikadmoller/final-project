@@ -21,14 +21,14 @@ html {
   min-height: 100%; }
 
 body {
-  min-height: 100%;
+  height: 100%;
   background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
   font-family: 'Roboto', helvetica, arial, sans-serif;
   font-size: 1.5em;
   margin-bottom: 2em; }
   body:before {
     content: '';
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -37,9 +37,14 @@ body {
     background-repeat: no-repeat;
     opacity: .3; }
 
+.grey-backgd {
+  background: #ECF0F1;
+  height: 100%;
+  width: 100%; }
+
 .login-form {
-  width: 15em;
-  padding: 2em;
+  width: 70%;
+  padding: 5%;
   position: relative;
   background: rgba(0, 0, 0, 0.15);
   display: flex;
@@ -55,64 +60,15 @@ body {
     width: 100%;
     background: linear-gradient(to right, #35c3c1, #00d6b7); }
 
-.wrapper {
-  margin: 0 auto;
-  padding: 2em 0; }
-
-.wrapper h1 {
-  font-size: 6em;
-  margin: 0;
-  color: #35c3c1;
-  text-align: center; }
-
-.wrapper h2 {
-  margin: 0;
-  padding-top: 1em;
-  color: #fff;
-  text-align: center; }
-
-@media screen and (max-width: 650px) {
-  .login-form {
-    width: 60%; }
-
-  .wrapper h1 {
-    font-size: 3em;
-    margin: 0 auto; }
-
-  .wrapper h2 {
-    font-size: 1em;
-    margin: 0 auto; }
-
-  .flex-row {
-    margin: 0.5em auto;
-    width: 100%; }
-
-  label {
-    display: none; }
-
-  .lf--input {
-    width: 100%;
-    border-radius: 0; }
-
-  .dropdown-backgd {
-    display: none; }
-
-  .dropdown {
-    display: none; }
-
-  .icon {
-    display: none; } }
 .flex-row {
   display: flex;
   margin-bottom: 1em; }
 
 .lf--label {
-  width: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f5f6f8;
-  cursor: pointer; }
+  display: none; }
+
+.icon {
+  display: none; }
 
 .lf--input {
   flex: 1;
@@ -126,10 +82,12 @@ body {
     transition: transform .15s ease;
     transform: scale(1.1); }
 
+/* Select dropdown button */
 .dropdown-backgd {
   background-color: white;
   display: inline-block; }
 
+/* Select dropdown button */
 .dropdown {
   height: 3em;
   background-color: white;
@@ -151,15 +109,51 @@ body {
     transition: transform .15s ease;
     transform: scale(1.1); }
 
-.lf--forgot {
-  margin-top: 1em;
-  color: #00d6b7;
-  font-size: .65em;
-  text-align: center; }
-
 ::placeholder {
   color: #8f8f8f; }
 
+@media screen and (min-width: 768px) {
+  .login-form {
+    width: 15em;
+    padding: 2em; }
+
+  .icon {
+    display: flex; }
+
+  .lf--label {
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f6f8;
+    cursor: pointer; } }
+header {
+  margin: 0 auto;
+  padding: 2em 0; }
+  header hgroup h1, header h2, header h3 {
+    margin: 0 auto;
+    color: #35c3c1;
+    text-align: center; }
+  header hgroup h1 {
+    font-size: 3em; }
+  header hgroup h2 {
+    font-size: 2em; }
+  header hgroup h3 {
+    font-size: 1.5em; }
+  header .tagline {
+    font-size: 1em;
+    margin: 0 auto;
+    padding-top: 1em;
+    color: #fff;
+    text-align: center; }
+
+@media screen and (min-width: 768px) {
+  header hgroup h1 {
+    font-size: 6em; }
+  header hgroup h2 {
+    font-size: 4em; }
+  header hgroup h3 {
+    font-size: 2em; } }
 .login-button {
   width: 100%;
   padding: 1em;
@@ -174,11 +168,8 @@ body {
 
 .error {
   color: white;
-  margin-top: 1em; }
-
-p {
-  margin: 0;
-  color: #34495E; }
+  margin-top: 0.7em;
+  font-size: 0.7em; }
 
 .select-button {
   cursor: pointer;
@@ -196,19 +187,16 @@ p {
     outline: none;
     transition: transform .15s ease;
     transform: scale(1.1); }
-
-.page {
-  text-align: center;
-  background: #ECF0F1;
-  padding: 0;
-  margin: 0; }
+  .select-button p {
+    margin: 0;
+    color: #34495E; }
 
 .ballot {
   display: block;
   max-width: 800px;
   background: #fff;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
   text-align: left;
   position: relative; }
 
@@ -230,8 +218,7 @@ p {
     color: #34495E; }
 
 .race {
-  border: 1px solid #ECF0F1;
-  margin-bottom: 2em; }
+  border: 1px solid #ECF0F1; }
   .race h3 {
     margin: 0 auto;
     background-color: #ECF0F1;
@@ -241,38 +228,27 @@ p {
     font-family: "Noto Serif", serif;
     font-weight: 400; }
 
+.choice-submit {
+  width: 10em;
+  margin: 0 auto;
+  padding-bottom: 2em; }
+
 .option-box {
-  display: inline-block;
-  background-color: #ECF0F1;
-  margin: 0.5em;
-  width: 44.5%;
+  height: 100px;
+  padding: 7.2px;
   border-radius: 3px;
-  padding: 0.3em;
-  vertical-align: top; }
+  background-color: #ECF0F1;
+  vertical-align: top;
+  text-align: left;
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  color: #2E2E2E; }
 
-@media screen and (max-width: 730px) {
-  .option-box {
-    min-width: 200px;
-    margin: 9.6px;
-    padding: 7.2px; }
-
-  .codpen {
-    width: 3em;
-    float: left;
-    position: absolute;
-    margin-left: 4.5em; }
-
-  .candidate-wrapper {
-    width: 98%;
-    float: left;
-    height: 3.5em;
-    margin: 0.6em 0 0.6em 0.6em;
-    border-bottom: 1.8px solid #ECF0F1; } }
 .img-container {
   height: 4em;
   width: 4em;
   overflow: hidden;
-  margin: 0 auto;
+  margin-right: 10px;
   float: left;
   border-radius: 3px;
   border: 1px solid #ccc; }
@@ -281,40 +257,15 @@ img {
   max-width: 100%;
   background-color: white; }
 
-.candidate-wrapper {
-  width: 7.8em;
-  float: left;
-  height: 3.5em;
-  margin: 0.6em 0 0.6em 0.6em;
-  border-bottom: 1.8px solid #ECF0F1; }
-
 .candidate {
-  font-size: 0.7em;
-  text-align: left;
-  font-family: "Noto Serif", serif;
-  font-weight: 400;
-  color: #2E2E2E; }
+  font-size: 0.7em; }
 
 .party {
-  text-align: left;
   font-size: 0.6em;
   margin: 0.5em 0;
-  font-family: "Noto Serif", serif;
-  font-weight: 400;
-  font-style: italic;
-  color: #2E2E2E; }
+  font-style: italic; }
 
-.choice-submit {
-  width: 10em;
-  margin: 0 auto; }
-
-.codpen {
-  width: 6em;
-  height: 2em;
-  float: left;
-  margin-top: 0.3em; }
-
-.container {
+.select {
   display: inline-block;
   position: relative;
   margin: 0;
@@ -327,7 +278,7 @@ img {
   padding: 0;
   background-color: grey; }
 
-.container ul {
+.select ul {
   list-style: none;
   height: 100%;
   width: 100%;
@@ -392,50 +343,47 @@ input[type=radio]:checked ~ .check .inside {
 input[type=radio]:checked ~ label {
   color: #0DFF92; }
 
-@media screen and (max-width: 650px) {
-  .race h3 {
-    padding: 0.5em;
-    font-size: 1em; } }
-.yes-no-wrapper {
-  width: 2em;
-  float: left;
-  height: 1em;
-  border-bottom: 1.8px solid #ECF0F1; }
+@media screen and (max-width: 767px) {
+  .race {
+    margin: 0 0 2em 0; }
 
-.yes-no-box {
-  display: inline-block;
-  background-color: #ECF0F1;
-  margin: 0.5em;
-  width: 4em;
-  border-radius: 3px;
-  padding: 0.3em;
-  vertical-align: top; }
+  .option-box {
+    max-width: 400px;
+    margin: 9.6px auto; } }
+@media screen and (min-width: 768px) {
+  .ballot {
+    padding: 20px; }
 
-.sm-ballot-box {
-  width: 6em;
-  /* height: 2em; */
-  float: left;
-  margin-top: 0.3em; }
+  .race {
+    clear: both;
+    margin: 2em;
+    overflow: auto; }
 
+  .option-box {
+    height: 100px;
+    width: 44.5%;
+    display: inline-block;
+    margin: 9.6px; }
+
+  .option-box:nth-child(even) {
+    float: right; }
+
+  .option-box:nth-child(odd) {
+    float: left; } }
 .graph {
-  height: 1.5em;
-  padding: 0.1em 1em; }
-
-.person {
-  width: 12em;
-  height: 100%;
-  background: #eee;
-  float: left; }
+  margin: 1em 0.5em; }
 
 .bar-graph {
-  height: 2.1em;
   background: #E74C3C;
-  overflow: hidden;
   font-size: 0.7em;
   text-align: right;
   font-family: "Noto Serif", serif;
   font-weight: 400;
-  color: white; }
+  color: white;
+  padding-right: 0.5em; }
+  .bar-graph p {
+    padding: 0.7em 0;
+    margin: 0; }
 
 .result {
   font-size: 0.7em;
@@ -443,16 +391,13 @@ input[type=radio]:checked ~ label {
   font-family: "Noto Serif", serif;
   font-weight: 400;
   color: #2E2E2E;
-  padding-left: 0.5em; }
-  .result h4 {
-    margin: 0.5em; }
+  padding-left: 0.5em;
+  background: #eee; }
+  .result p {
+    padding: 0.7em 0;
+    margin: 0; }
 
-.stat {
-  padding-right: 0.5em; }
-  .stat h4 {
-    margin: 0.5em; }
-
-.race-sections {
+.race-section {
   margin: 1em 0; }
 
 .race-name {
@@ -466,93 +411,18 @@ input[type=radio]:checked ~ label {
   padding: 1em;
   margin-bottom: 2em; }
 
-@media (max-width: 640px) {
-  .race-sections {
-    margin: 1em 0; }
-
-  .graph {
-    height: 100%;
-    padding: 0.1em 1em 0.1em 1em;
-    width: 10em; }
-
-  .person {
-    width: 12em;
-    height: 2.1em;
-    background: #eee; }
-
-  .bar-graph {
-    height: 2.1em;
-    background: #E74C3C;
-    overflow: hidden;
-    font-size: 0.7em;
-    text-align: right;
-    font-family: "Noto Serif", serif;
-    font-weight: 400;
-    color: white; } }
-.confirm-title {
-  margin: 2em; }
-
-.confirm-title h1 {
-  font-size: 4em;
-  margin: 1em 0 0 0;
-  color: #35c3c1;
+.confirm-message {
+  margin: 2em;
   text-align: center; }
-
-.confirm-title h2 {
-  margin: 2em 0 0 0;
-  padding-top: 1em;
-  color: #fff;
-  font-size: 1em;
-  text-align: center; }
-
-.confirm-form {
-  width: 13em;
-  padding: 2em;
-  position: relative;
-  background: rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  margin: 0 auto; }
-
-.input-confirm {
-  flex: 1;
-  padding: 1em;
-  border: 0;
-  color: #8f8f8f;
-  font-size: 1rem;
-  background-color: white;
-  width: 8em; }
-  .input-confirm:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1); }
-
-.dropdown-backgd-confirm {
-  background-color: white;
-  display: inline-block; }
-
-.dropdown-confirm {
-  height: 3em;
-  background-color: white;
-  display: inline-block; }
-
-.button-confirm {
-  padding: 1em;
-  width: 100%;
-  margin-left: 1em;
-  background: linear-gradient(to right, #35c3c1, #00d6b7);
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-size: .75em;
-  font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
-  .button-confirm:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1); }
+  .confirm-message h1 {
+    font-size: 4em;
+    margin: 1em 0 0 0;
+    color: #35c3c1; }
+  .confirm-message h2 {
+    margin: 2em 0 0 0;
+    padding-top: 1em;
+    color: #fff;
+    font-size: 1em; }
 
 .confirm-error {
   color: #fff;
@@ -560,29 +430,17 @@ input[type=radio]:checked ~ label {
   text-align: center; }
 
 @media screen and (max-width: 650px) {
-  .confirm-title {
-    margin: 0; }
-
-  .confirm-title h1 {
-    font-size: 2em;
-    margin: 1em 0 0 0;
-    color: #35c3c1;
+  .confirm-message {
+    margin: 0;
     text-align: center; }
-
-  .confirm-title h2 {
-    margin: 2em 0;
-    padding-top: 1em;
-    color: #fff;
-    font-size: 1em;
-    text-align: center; }
-
-  .confirm-form {
-    width: 60%; }
-
-  .dropdown-backgd-confirm {
-    display: none; }
-
-  .dropdown-confirm {
-    display: none; } }
+    .confirm-message h1 {
+      font-size: 2em;
+      margin: 1em 0 0 0;
+      color: #35c3c1; }
+    .confirm-message h2 {
+      margin: 2em 0;
+      padding-top: 1em;
+      color: #fff;
+      font-size: 1em; } }
 
 /*# sourceMappingURL=importer.css.map */

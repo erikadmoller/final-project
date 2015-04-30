@@ -1,25 +1,20 @@
-<div>
-	<div ng-controller="loginCtrl">
-	<div class="wrapper">
-		<h1>Login</h1>
-	</div>
-		<form class="login-form" ng-submit="loginSubmit(user)">
-			<div class="flex-row">
-		    <label class="lf--label" for="username">
-		    </label>
-		    <input id="username" class='lf--input' placeholder='Enter your email address' type='text' ng-model="user.identifier">
-		  </div>
-		  <div class="flex-row">
-		    <label class="lf--label" for="password">
-		    </label>
-		    <input id="password" class='lf--input' placeholder='Enter your password' type='password' ng-model="user.password">
-		  </div>
-			<button class='lf--submit' type='submit'>LOGIN</button>
-			<div ng-bind="error.email" class="error"></div>
-		  	<div>
-		  	<div ng-bind="error.password" class="error"></div>
-		  	<div>
-		  	<div ng-bind="loginErrorMsg" class="error"></div>
-		</form>
-	</div>
+<header>
+  <hgroup>
+    <h2>Login</h2>
+  </hgroup>
+</header>
+<form class="login-form" ng-submit="loginSubmit(user)">
+  <div class="flex-row">
+    <label class="lf--label" for="username"></label>
+    <input class='lf--input' placeholder='Enter your email address' type='text' ng-model="user.identifier">
+  </div>
+<div class="flex-row">
+  <label class="lf--label" for="password"></label>
+  <input class='lf--input' placeholder='Enter your password' type='password' ng-model="user.password">
 </div>
+<button class='lf--submit' type='submit'>LOGIN</button>
+  <p ng-bind="error.email" class="error"></p>
+  <p ng-bind="error.password" class="error"></p>
+  <p ng-bind="loginErrorMsg" class="error"></p>
+<button class='login-button' ui-sref="login">REGISTER</button>
+</form>

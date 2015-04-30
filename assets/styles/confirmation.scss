@@ -1,131 +1,43 @@
-.confirm-title {
-	margin: 2em;
-}
+.confirm-message {
+  margin: 2em;
+  text-align: center;
 
-.confirm-title	h1 {
-	font-size: 4em;
-	margin: 1em 0 0 0;
-	color: #35c3c1;
-	text-align: center;
-}
-
-.confirm-title	h2 {
-	margin: 2em 0 0 0;
-	padding-top: 1em;
-	color: #fff;
-	font-size: 1em;
-	text-align: center;
-}
-
-.confirm-form {
-  width: 13em;
-  padding: 2em;
-  position: relative;
-  background: rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  margin: 0 auto;
-}
-
-.input-confirm {
-	flex: 1;
-	padding: 1em;
-	border: 0;
-	color: $gray;
-	font-size: 1rem;
-	background-color: white;
-	width: 8em;
-
-		&:focus {
-		  outline: none;
-		  transition: transform .15s ease;
-		  transform: scale(1.1);
-		}
-}
-
-.dropdown-backgd-confirm {
-    background-color: white;
-    display: inline-block;
-}
-
-.dropdown-confirm {
-    height: 3em;
-    background-color: white;
-    display: inline-block;	
-}
-
-.button-confirm {
-	padding: 1em;
-	width: 100%;
-	margin-left: 1em;
-
-	background: linear-gradient(
-	  to right,
-	  $green-dark,
-	  $green-light
-	);
-	border: 0;
-	color: #fff;
-	cursor: pointer;
-	font-size: .75em;
-	font-weight: 600;
-	text-shadow: 0 1px 0 rgba(black, .2);
-
-	  &:focus {
-	    outline: none;
-	    transition: transform .15s ease;
-	    transform: scale(1.1);
-	  }
+	h1 {
+	  font-size: 4em;
+	  margin: 1em 0 0 0;
+	  color: #35c3c1;
+	}
+	h2 {
+	  margin: 2em 0 0 0;
+	  padding-top: 1em;
+	  color: #fff;
+	  font-size: 1em;
+	}
 }
 
 .confirm-error {
-	// margin: 1em;
 	color: #fff;
 	font-size: 1em;
 	text-align: center;
 }
 
 @media screen and (max-width: 650px) {
-	.confirm-title {
+	.confirm-message {
 		margin: 0;
-	}
-
-	.confirm-title	h1 {
-		font-size: 2em;
-		margin: 1em 0 0 0;
-		color: #35c3c1;
 		text-align: center;
-	}
 
-	.confirm-title	h2 {
-		margin: 2em 0;
-		padding-top: 1em;
-		color: #fff;
-		font-size: 1em;
-		text-align: center;
+		h1 {
+		  font-size: 2em;
+		  margin: 1em 0 0 0;
+		  color: #35c3c1;
+		  	
+		}
+		h2 {
+		  margin: 2em 0;
+		  padding-top: 1em;
+		  color: #fff;
+		  font-size: 1em;
+		}
 	}
-
-	.confirm-form {
-	  width: 60%;
-	  // padding: 2em;
-	  // position: relative;
-	  // background: rgba(0, 0, 0, 0.15);
-	  // display: flex;
-	  // justify-content: center;
-	  // flex-direction: column;
-	  // position: relative;
-	  // margin: 0 auto;
-	}
-
-	.dropdown-backgd-confirm {
-		display: none;
-	}
-
-	.dropdown-confirm {
-		display: none;
-	}
-
 
 }

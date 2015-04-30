@@ -1,90 +1,67 @@
-<div class="page">
-	<div class="ballot">
-		<header class="election-title">
-			<h1>This is your ballot</h2>
-			<h2>City</h3>
-		</header>
+<div class="grey-backgd">
+  <div class="ballot">
+	<header class="election-title">
+	  <hgroup>
+		<h1>This is your ballot</h2>
+		<h2>City</h3>
+	  </hgroup>
+	</header>
+  <form class="form" ng-submit="citySubmit(pick.mayor, pick.councilman)">
+	<section class="race">
+	  <h3>Race for Mayor</h3>
+		<div class="option-container">
+		  <div class="option-box" ng-repeat="mayor in mayors">
+			<div class="img-container">
+				<img ng-src="{{ mayor.image }}">
+			</div>
+			<div class="candidate">{{ mayor.candidate }}
+			</div>
+			<div class="party">{{ mayor.party }}
+			</div>
+			<div class="select">
+			  <ul>
+				<li>
+			      <input ng-value="mayor.id" ng-model="pick.mayor" name="maySelect" type="radio" id="f-option{{ mayor.id }}">
 
-			<form class="form" ng-submit="citySubmit(pick.mayor, pick.councilman)">
-
-					<div class="race">
-						<h3>Race for Mayor</h3>
-					
-						<div class="choice-block">
-							<div class="option-box" ng-repeat="mayor in mayors">
-								<div class="img-container">
-									<img ng-src="{{ mayor.image }}">
-								</div>
-								<div class="candidate-wrapper">
-									<div class="candidate">{{ mayor.candidate }}
-									</div>
-									<div class="party">{{ mayor.party }}
-									</div>
-								</div>
-						
-
-									<!-- <input class="choice-button" ng-value="mayor.id" type="radio" ng-model="pick.mayor" name="maySelect"> -->
-
-								<div class="codpen">
-									<div class="container">
-										<ul>
-											<li>
-											    <input ng-value="mayor.id" ng-model="pick.mayor" name="maySelect" type="radio" id="f-option{{ mayor.id }}">
-
-											    <label for="f-option{{ mayor.id }}">Select</label>
-											    <div class="check">
-											    	<div class="inside"></div>
-											    </div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="race">
-						<h3>Race for Councilman</h3>
-					
-						<div class="choice-block">
-							<div class="option-box" ng-repeat="councilman in councilmen">
-								<div class="img-container">
-									<img ng-src="{{ councilman.image }}">
-								</div>
-								<div class="candidate-wrapper">
-									<div class="candidate">{{ councilman.candidate }}
-									</div>
-									<div class="party">{{ councilman.party }}
-									</div>
-								</div>
-						
-<!-- 
-									<input class="choice-button" ng-value="councilman.id" type="radio" ng-model="pick.councilman" name="councSelect"> -->
-
-								<div class="codpen">
-									<div class="container">
-										<ul>
-											<li>
-											    <input ng-value="councilman.id" ng-model="pick.councilman" name="councSelect" type="radio" id="f-option{{ councilman.id }}">
-
-											    <label for="f-option{{ councilman.id }}">Select</label>
-											    <div class="check">
-											    	<div class="inside"></div>
-											    </div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>	
-
-				<br><br>
-				<div class="choice-submit">
-					<button class='lf--submit' type="submit" value="submit">Vote</button>
+			      <label for="f-option{{ mayor.id }}">Select</label>
+			      <div class="check">
+			    	<div class="inside"></div>
+			      </div>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	</section>
+	<section class="race">
+		<h3>Race for Councilman</h3>
+		<div class="option-container">
+			<div class="option-box" ng-repeat="councilman in councilmen">
+				<div class="img-container">
+					<img ng-src="{{ councilman.image }}">
 				</div>
-			</form>
+				<div class="candidate">{{ councilman.candidate }}
+				</div>
+				<div class="party">{{ councilman.party }}
+				</div>
+				<div class="container">
+					<ul>
+						<li>
+						    <input ng-value="councilman.id" ng-model="pick.councilman" name="councSelect" type="radio" id="f-option{{ councilman.id }}">
+
+						    <label for="f-option{{ councilman.id }}">Select</label>
+						    <div class="check">
+						    	<div class="inside"></div>
+						    </div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>	
+	<div class="choice-submit">
+		<button class='lf--submit' type="submit" value="submit">Vote</button>
 	</div>
-</div>
+  </form>
+  </div>
 </div>

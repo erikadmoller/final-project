@@ -1,0 +1,115 @@
+.login-form {
+    width: 70%;
+    padding: 5%;
+    position: relative;
+    background: rgba(black, .15);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    
+    &:before {
+      // content: '';
+      position: absolute;
+      top: -2px; left: 0;
+      height: 2px; width: 100%;
+      
+      background: linear-gradient(
+        to right,
+        $green-dark,
+        $green-light
+      );    
+    }
+  }
+
+  .flex-row {
+    display: flex;
+    margin-bottom: 1em;
+  }
+
+  .lf--label {
+    display: none;
+  }
+
+  .icon {
+    display: none;
+  }
+
+  .lf--input {
+    flex: 1;
+    padding: 1em;
+    border: 0;
+    color: $gray;
+    font-size: 1rem;
+    background-color: white;
+
+    &:focus {
+      outline: none;
+      transition: transform .15s ease;
+      transform: scale(1.1);
+    }
+  }
+
+  /* Select dropdown button */
+
+  .dropdown-backgd {
+    background-color: white;
+    display: inline-block;
+  }
+
+  /* Select dropdown button */
+
+  .dropdown {
+    height: 3em;
+    background-color: white;
+    display: inline-block;
+  }
+
+  .lf--submit {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    
+    background: linear-gradient(
+      to right,
+      $green-dark,
+      $green-light
+    );
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: .75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(black, .2);
+    
+      &:focus {
+        outline: none;
+        transition: transform .15s ease;
+        transform: scale(1.1);
+      }
+  }
+
+  ::placeholder { color: $gray; }
+
+@media screen and (min-width: 768px) {
+
+  .login-form {
+    width: 15em;
+    padding: 2em;
+  }
+
+  .icon {
+    display: flex;
+  }
+
+  .lf--label {
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;    
+  background: $gray-light;
+  cursor: pointer;
+  }
+
+}

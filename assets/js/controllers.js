@@ -147,7 +147,6 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		$scope.representatives = states;
 	});
 
-
 	$scope.pick = { 
 		governor: '',
 		representative: ''
@@ -211,7 +210,6 @@ angular.module('basic.controllers', ['basic.services', 'ui.router'])
 		// console.log(county);
 		$scope.laws = county;
 	});
-
 
 	$scope.pick = { 
 		proposition: '',

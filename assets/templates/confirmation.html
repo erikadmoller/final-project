@@ -1,28 +1,26 @@
-<div class="confirm-title">
-	<h1>You have voted!</h1>
-	<h2>Would you like to receive text message election updates?</h2>
-</div>
-	<form class="confirm-form" ng-submit="confirmSubmit(textConfirm)">
-		<div class="flex-row">
-		    <label class="lf--label" for="username"></label>
-			<div class="dropdown-backgd">
-			    <select name="confirmation" size="1" class='input-confirm dropdown' type='text' ng-model="textConfirm">
-	    			<option value="">Select</option>
-	    			<option value="yes">Yes</option>
-	    			<option value="no">No</option>
-			    </select>
-		    </div>
-		    <div class="button-confirm-wrapper">
-		    	<button class="button-confirm" type="submit" value="submit">Submit</button>
-		    </div>
-		  </div>
-			
-		</div>
-			<h2 class="confirm-error" ng-show="confirmErrorShow" ng-bind="confirmErrorMsg"></h2>
-		<div>
-			<button ng-show="confirmLogin" class='login-button' ui-sref="login">Login</button>
-		</div>
+<header>
+  <hgroup>
+    <h3>You have voted!</h3>
+    <p class="tagline">Would you like to receive text message election updates?</p>
+  </hgroup>
+</header>
+	<form class="login-form" ng-submit="confirmSubmit(textConfirm)">
+	  <div class="flex-row">
+	    <label class="lf--label"></label>
+		<div class="dropdown-backgd">
+	      <select name="confirmation" size="1" class='lf--input dropdown' type='text' ng-model="textConfirm">
+			<option value="">Select yes or no</option>
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+	      </select>
+	    </div>
+	  </div>
+	  <button class="lf--submit" type="submit" value="submit">Submit</button>
+	  <div>
+		<h2 class="confirm-error" ng-show="confirmErrorShow" ng-bind="confirmErrorMsg"></h2>
+	  </div>
+	<button ng-show="confirmLogin" class='login-button' ui-sref="login">Login</button>
 	</form>
-	<div class="confirm-title" ng-show="textUpdate">
-		<h2>We will send you text message updates</h2>
+	<div class="confirm-message" ng-show="textUpdate">
+	  <h2>We will send you text message updates</h2>
 	</div>

@@ -1,34 +1,20 @@
-$dark: #5E5E5E;
-
 .graph {
-  height: 1.5em;
-  padding: 0.1em 1em;
-  // position: relative;
-}
-
-.person {
-  width: 12em;
-  height: 100%;
-  background: #eee;
-  float: left;
-  // position: relative;
-  // z-index: 1;
+  margin: 1em 0.5em;
 }
 
 .bar-graph {
-  height: 2.1em;
   background: #E74C3C;
-  overflow: hidden;
   font-size: 0.7em;
   text-align: right;
   font-family: $serif;
   font-weight: 400;
   color: white;
-  // padding-left: 210px;
-  // box-sizing: border-box;
-  // position: absolute;
-  // height: 36px;
-
+  padding-right: 0.5em;
+  
+  p {
+    padding: 0.7em 0;
+    margin: 0;
+  }
 }
 
 .result {
@@ -38,21 +24,15 @@ $dark: #5E5E5E;
   font-weight: 400;
   color: #2E2E2E;
   padding-left: 0.5em;
+  background: #eee;
 
-  h4 {
-    margin: 0.5em;
+  p {
+    padding: 0.7em 0;
+    margin: 0;
   }
 }
 
-.stat {
-  padding-right: 0.5em;
-
-  h4 {
-    margin: 0.5em;
-  }
-}
-
-.race-sections {
+.race-section {
   margin: 1em 0;
 }
 
@@ -66,44 +46,4 @@ $dark: #5E5E5E;
   font-style: italic;
   padding: 1em;
   margin-bottom: 2em;
-}
-
-@media (max-width: 640px) {
-
-  .race-sections {
-  margin: 1em 0;
-  }
-   
-  .graph {
-    height: 100%;
-    padding: 0.1em 1em 0.1em 1em;
-    // position: relative;
-    width: 10em;
-  }
-
-.person {
-  width: 12em;
-  height: 2.1em;
-  background: #eee;
-  // float: left;
-  // position: relative;
-  // z-index: 1;
-}
-
-.bar-graph {
-  height: 2.1em;
-  background: #E74C3C;
-  overflow: hidden;
-  font-size: 0.7em;
-  text-align: right;
-  font-family: $serif;
-  font-weight: 400;
-  color: white;
-  // padding-left: 210px;
-  // box-sizing: border-box;
-  // position: absolute;
-  // height: 36px;
-
-}
-
 }

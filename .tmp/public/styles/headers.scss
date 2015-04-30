@@ -1,0 +1,51 @@
+header {
+  margin: 0 auto;
+  padding: 2em 0;
+
+  hgroup h1, h2, h3 {
+    margin: 0 auto;
+    color: $green-dark;
+    text-align: center;
+  }
+
+  hgroup h1 {
+    font-size: 3em;
+  }
+
+  hgroup h2 {
+    font-size: 2em;
+  }
+
+  hgroup h3 {
+    font-size: 1.5em;
+  }
+
+  .tagline {
+    font-size: 1em;
+    margin: 0 auto;
+    padding-top: 1em;
+    color: #fff;
+    text-align: center;
+  }
+  
+}
+
+@media screen and (min-width: 768px) {
+
+  header {
+
+    hgroup h1 {
+      font-size: 6em;
+    }
+
+    hgroup h2 {
+      font-size: 4em;
+    }
+
+    hgroup h3 {
+      font-size: 2em;
+    }
+
+  }
+
+}
