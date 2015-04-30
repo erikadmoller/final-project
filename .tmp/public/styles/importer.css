@@ -42,24 +42,6 @@ body {
   height: 100%;
   width: 100%; }
 
-.login-form {
-  width: 70%;
-  padding: 5%;
-  position: relative;
-  background: rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  margin: 0 auto; }
-  .login-form:before {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background: linear-gradient(to right, #35c3c1, #00d6b7); }
-
 .flex-row {
   display: flex;
   margin-bottom: 1em; }
@@ -115,7 +97,21 @@ body {
 @media screen and (min-width: 768px) {
   .login-form {
     width: 15em;
-    padding: 2em; }
+    padding: 2em;
+    position: relative;
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto; }
+    .login-form:before {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(to right, #35c3c1, #00d6b7); }
 
   .icon {
     display: flex; }
