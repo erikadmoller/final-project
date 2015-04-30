@@ -10,7 +10,7 @@ If casting your vote was an online experience, what would that look like? In thi
 
 
 <h3>Data Models</h3>
-| <h4>User</h4> |
+| <h4>User</h4> | ------- | ------- | ------- |
 | --------- | -------- | -------- | -------- |
 | userId: | number | unique | true |
 | username: | string | unique: | true |
