@@ -11,7 +11,7 @@ If casting your vote was an online experience, what would that look like? In thi
 
 <h3>Data Models</h3>
 | <h4>User</h4> |  |  |  |  |  |
-| --------- | -------- | -------- | -------- |
+| --------- | -------- | -------- | -------- | -------- | -------- |
 | username: | string | unique: | true |
 | email: | email | required: | true | unqiue: | true |
 | passports: | collection: | Passport | via: | user |
@@ -25,12 +25,13 @@ If casting your vote was an online experience, what would that look like? In thi
 | ssn: | string | required: | true | unqiue: | true |
 
 | <h4>Votes</h4> |  |  |  |
+| --------- | -------- | -------- | -------- |
 | id: | number |
 | choice: | model: | Options |
 | userId: | integer | unqiue | false |
 
-| <h4>Profile</h4> |  |  |  |  |
-| --------- | -------- | -------- | -------- |
+| <h4>Profile</h4> |  |  |  |  |  |
+| --------- | -------- | -------- | -------- | -------- | -------- |
 | userId: | integer | unique: | true |
 | email: | email | required: | true | unqiue: | true |
 | street: | string | required: | true |
@@ -43,8 +44,8 @@ If casting your vote was an online experience, what would that look like? In thi
 | ssn: | integer | required: | true | unqiue: | true |
 | textConfirm: | type: | string | required: | false |
 
-<h4>Options</h4>
-| -------- | ------- |
+| <h4>Options</h4> |  |  |  |
+| -------- | ------- | ------- | ------- |
 | race: | string | required: | true |
 | candidate: | string | required: | true |
 | year: | integer | required: | true |
