@@ -43,6 +43,7 @@ body {
   width: 100%; }
 
 .flex-row {
+  display: flex;
   margin-bottom: 1em; }
 
 .lf--label {
@@ -52,6 +53,7 @@ body {
   display: none; }
 
 .lf--input {
+  flex: 1;
   padding: 1em;
   border: 0;
   color: #8f8f8f;
