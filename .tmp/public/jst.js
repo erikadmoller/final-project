@@ -44,7 +44,7 @@ this["JST"]["assets/templates/login.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<header>\n  <hgroup>\n    <h2>Login</h2>\n  </hgroup>\n</header>\n<form class="login-form" ng-submit="loginSubmit(user)">\n  <div class="flex-row">\n    <label class="lf--label" for="username"></label>\n    <input class=\'lf--input\' placeholder=\'Enter your email address\' type=\'text\' ng-model="user.identifier">\n  </div>\n<div class="flex-row">\n  <label class="lf--label" for="password"></label>\n  <input class=\'lf--input\' placeholder=\'Enter your password\' type=\'password\' ng-model="user.password">\n</div>\n<button class=\'lf--submit\' type=\'submit\'>LOGIN</button>\n  <p ng-bind="error.email" class="error"></p>\n  <p ng-bind="error.password" class="error"></p>\n  <p ng-bind="loginErrorMsg" class="error"></p>\n<button class=\'login-button\' ui-sref="login">REGISTER</button>\n</form>';
+__p += '<header>\n  <hgroup>\n    <h2>Login</h2>\n  </hgroup>\n</header>\n<form class="login-form" ng-submit="loginSubmit(user)">\n  <div class="flex-row">\n    <label class="lf--label" for="username"></label>\n    <input class=\'lf--input\' placeholder=\'Enter your email address\' type=\'text\' ng-model="user.identifier">\n  </div>\n<div class="flex-row">\n  <label class="lf--label" for="password"></label>\n  <input class=\'lf--input\' placeholder=\'Enter your password\' type=\'password\' ng-model="user.password">\n</div>\n<button class=\'lf--submit\' type=\'submit\'>LOGIN</button>\n  <p ng-bind="error.email" class="error"></p>\n  <p ng-bind="error.password" class="error"></p>\n  <p ng-bind="loginErrorMsg" class="error"></p>\n<button class=\'login-button\' ui-sref="register">REGISTER</button>\n</form>';
 
 }
 return __p
