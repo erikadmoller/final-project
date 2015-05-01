@@ -54,7 +54,9 @@ body {
 
 .lf--input {
   flex: 1;
-  padding: 1em;
+  width: 100%;
+  display: block;
+  padding: 1em 0;
   border: 0;
   color: #8f8f8f;
   font-size: 1rem;
@@ -67,11 +69,12 @@ body {
 /* Select dropdown button */
 .dropdown-backgd {
   background-color: white;
-  display: inline-block; }
+  display: inline-block;
+  padding: 0.3em 0; }
 
 /* Select dropdown button */
 .dropdown {
-  height: 3em;
+  height: 2em;
   background-color: white;
   display: inline-block; }
 

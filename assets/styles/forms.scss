@@ -13,7 +13,9 @@
 
 .lf--input {
   flex: 1;
-  padding: 1em;
+  width: 100%;
+  display: block;
+  padding: 1em 0;
   border: 0;
   color: $gray;
   font-size: 1rem;
@@ -31,14 +33,16 @@
 .dropdown-backgd {
   background-color: white;
   display: inline-block;
+  padding: 0.3em 0;
 }
 
 /* Select dropdown button */
 
 .dropdown {
-  height: 3em;
+  height: 2em;
   background-color: white;
   display: inline-block;
+
 }
 
 .lf--submit {
@@ -81,7 +85,6 @@
     margin: 0 auto;
     
     &:before {
-      // content: '';
       position: absolute;
       top: -2px; left: 0;
       height: 2px; width: 100%;
@@ -99,12 +102,12 @@
   }
 
   .lf--label {
-  width: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;    
-  background: $gray-light;
-  cursor: pointer;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    background: $gray-light;
+    cursor: pointer;
   }
 
 }
