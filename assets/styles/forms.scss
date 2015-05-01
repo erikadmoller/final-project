@@ -33,7 +33,6 @@
 .dropdown-backgd {
   background-color: white;
   display: inline-block;
-  padding: 0.3em 0;
 }
 
 /* Select dropdown button */
@@ -109,5 +108,9 @@
     background: $gray-light;
     cursor: pointer;
   }
+
+  .dropdown-backgd {
+    padding: 0.3em 0;
+}
 
 }

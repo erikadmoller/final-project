@@ -69,8 +69,7 @@ body {
 /* Select dropdown button */
 .dropdown-backgd {
   background-color: white;
-  display: inline-block;
-  padding: 0.3em 0; }
+  display: inline-block; }
 
 /* Select dropdown button */
 .dropdown {
@@ -125,7 +124,10 @@ body {
     align-items: center;
     justify-content: center;
     background: #f5f6f8;
-    cursor: pointer; } }
+    cursor: pointer; }
+
+  .dropdown-backgd {
+    padding: 0.3em 0; } }
 header {
   margin: 0 auto;
   padding: 2em 0; }
