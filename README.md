@@ -64,7 +64,9 @@ If casting your vote was an online experience, what would that look like? In thi
 <ul>
 	<li>AngularJS</li>
 	<li>Sails</li>
-	<li>Underscore</li>
+	<li>Lodash</li>
 	<li>Twilio</li>
+	<li>Sails</li>
+	<li>Sass</li>
 </ul>
 
