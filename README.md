@@ -1,5 +1,7 @@
 <h1>Online Voting App</h1>
 
+Link: https://speak-out.herokuapp.com/#/register
+
 <h2>Description</h2>
 
 Technology is changing so fast, but the way we vote does not. As millenials grow up in an ever changing, technology-focused world its imperative to speak on their level. It is generally known that turnout for young voters at polls is low. What if we could remove some of the barriers that discourages young voters from casting their voice? Registering to vote is still a paper heavy action and getting young voters to not only find their correct voting place, but also taking the time to show up only to wait in line and use less than efficient technology is discouraging. Young people are usually in need of money and are dependent on their income, therefore, taking them away from what they're most focused on to jump through hoops to cast an opinion hardly seems worth the effort. This app is a proof of concept and is meant to give users the experience of what it could be like to vote online.
