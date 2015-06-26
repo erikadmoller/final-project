@@ -21,11 +21,11 @@
   font-size: 1rem;
   background-color: white;
 
-  &:focus {
-    outline: none;
-    transition: transform .15s ease;
-    transform: scale(1.1);
-  }
+  // &:focus {
+  //   outline: none;
+  //   transition: transform .15s ease;
+  //   transform: scale(1.1);
+  // }
 }
 
 /* Select dropdown button */
@@ -38,10 +38,19 @@
 /* Select dropdown button */
 
 .dropdown {
-  height: 2em;
+  height: 3em;
+  width: 10em;
   background-color: white;
   display: inline-block;
+  outline: 0;
+  color: $gray;
+  font-size: 1rem;
 
+}
+
+select {
+  border: 0;
+  border-radius: 0;
 }
 
 .lf--submit {
@@ -61,11 +70,11 @@
   font-weight: 600;
   text-shadow: 0 1px 0 rgba(black, .2);
   
-    &:focus {
-      outline: none;
-      transition: transform .15s ease;
-      transform: scale(1.1);
-    }
+    // &:focus {
+    //   outline: none;
+    //   transition: transform .15s ease;
+    //   transform: scale(1.1);
+    // }
 }
 
 ::placeholder { color: $gray; }
@@ -109,8 +118,34 @@
     cursor: pointer;
   }
 
+  .lf--input {
+    &:focus {
+    outline: none;
+    transition: transform .15s ease;
+    -moz-transition: transform .15s ease;
+    -webkit-transition: transform .15s ease;
+
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    }  
+  }
+
   .dropdown-backgd {
-    padding: 0.3em 0;
-}
+    // padding: 0.3em 0;
+  }
+
+  .lf--submit {
+    &:focus {
+    outline: none;
+    transition: transform .15s ease;
+    -moz-transition: transform .15s ease;
+    -webkit-transition: transform .15s east;
+
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    }
+  }
 
 }

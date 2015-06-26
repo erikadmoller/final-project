@@ -6,5 +6,6 @@ module.exports = {
       pool: false,
       ssl: true
     }
+    .listen(process.env.PORT || 5000);
   }
 };
